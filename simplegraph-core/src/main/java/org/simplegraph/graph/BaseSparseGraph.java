@@ -148,7 +148,7 @@ public class BaseSparseGraph<V> {
         return new LinkedList<V>(edges.keySet());
     }
 
-    public Collection<V> getPath(V source, V destination) {
+    public LinkedList<V> getPath(V source, V destination) {
         return new LinkedList<V>();
     }
 
