@@ -5,7 +5,7 @@ Basic graph interfaces and implementations in Java.
 ## Interfaces
 
 - [] Graphs
-  - [] Graph
+  - [x] Graph
   - [] DirectedGraph
   - [] WeightedGraph
   - [] DirectedWeightedGraph
