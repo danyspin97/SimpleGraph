@@ -89,7 +89,7 @@ public class BaseSparseGraph<V> {
      * Check the existence of an edge that goes from the first vertex to the second.
      * @param  v1 first vertex
      * @param  v2 second vertex
-     * @return    true if an edge from v1 to v2
+     * @return    true if an edge from v1 to v2 exists
      */
     public boolean existsEdge(V v1, V v2) {
         if (!containsVertex(v1) || !containsVertex(v2)) {

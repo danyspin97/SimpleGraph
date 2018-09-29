@@ -3,6 +3,7 @@ package org.simplegraph.graph;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.LinkedList;
 
 public class BaseDenseGraph<V> {
     protected static final short DEFAULT_SIZE = 15;
@@ -139,7 +140,7 @@ public class BaseDenseGraph<V> {
      * Get all the vertices in the graph
      * @return a LinkedList containing all the graph vertices
      */
-    public Collection<V> getVertices() {
-        return verticesArray.subList(0, verticesCount);
+    public LinkedList<V> getVertices() {
+        return new LinkedList<V>(verticesArray.subList(0, verticesCount));
     }
 }

@@ -34,7 +34,13 @@ public class DirectedSparseGraph<V> extends BaseSparseGraph<V> implements Direct
         }
 
         LinkedList<V> neighbors = getOutVertices(vertex);
-        neighbors.addAll(getInVertices(vertex));
+
+        // Do not add duplicated element
+        for (V v : getInVertices(vertex)) {
+            if (!neighbors.contains(v)) {
+                neighbors.add(v);
+            }
+        }
 
         return neighbors;
     }
