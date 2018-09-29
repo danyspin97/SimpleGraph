@@ -25,7 +25,7 @@ public class BaseSparseGraph<V> {
     }
 
     /**
-     * Add a node to the vertex.
+     * Add a vertex to the graph.
      * @param  vertex the vertex to add
      * @return        true if the the graph has been modified
      */
