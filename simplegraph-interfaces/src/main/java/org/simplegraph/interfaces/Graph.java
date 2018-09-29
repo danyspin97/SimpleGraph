@@ -1,6 +1,6 @@
 package org.simplegraph.interfaces;
 
-import java.util.Collection;
+import java.util.LinkedList;
 
 public interface Graph<V> {
     public boolean addVertex(V vertex);
@@ -15,13 +15,15 @@ public interface Graph<V> {
 
     public boolean existsEdge(V v1, V v2);
 
-    public Collection<V> getNeighbors(V vertex);
+    public LinkedList<V> getVertices();
+
+    public LinkedList<V> getNeighbors(V vertex);
 
     public int countNeighbors(V vertex);
 
     public int countEdges();
 
-    public Collection<V> getPath(V source, V destination);
+    public LinkedList<V> getPath(V source, V destination);
 
     public Graph<V> getSpanningTree();
 }
