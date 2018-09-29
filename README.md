@@ -9,7 +9,8 @@ Basic graph interfaces and implementations in Java.
   - [x] DirectedGraph
   - [] WeightedGraph
   - [] DirectedWeightedGraph
-- [] Weight
+- [x] Weight
+- [x] Summable
 
 ## Implementations
 
