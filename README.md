@@ -17,7 +17,7 @@ Basic graph interfaces and implementations in Java.
   - [] BaseDenseGraph
   - [] Unweighted
     - [] UndirectedDenseGraph
-    - [] UndirectedSparseGraph
+    - [x] UndirectedSparseGraph
     - [] DirectedDenseGraph
     - [] DirectedSparseGraph
   - [] Weighted
