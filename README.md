@@ -6,7 +6,7 @@ Basic graph interfaces and implementations in Java.
 
 - [] Graphs
   - [x] Graph
-  - [] DirectedGraph
+  - [x] DirectedGraph
   - [] WeightedGraph
   - [] DirectedWeightedGraph
 - [] Weight
@@ -15,11 +15,13 @@ Basic graph interfaces and implementations in Java.
 
 - [] Graphs
   - [] BaseDenseGraph
+  - [x] BaseSparseGraph
+  - [] BaseWeightedSparseGraph
   - [] Unweighted
     - [] UndirectedDenseGraph
     - [x] UndirectedSparseGraph
     - [] DirectedDenseGraph
-    - [] DirectedSparseGraph
+    - [x] DirectedSparseGraph
   - [] Weighted
     - [] UndirectedWeightedDenseGraph
     - [] UndirectedWeightedSparseGraph
