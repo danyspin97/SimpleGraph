@@ -28,7 +28,7 @@ Basic graph interfaces and implementations in Java.
     - [] DirectedWeightedDenseGraph
     - [] DirectedWeightedSparseGraph
 - [] Utilities
-  - [] FibonacciHeap
+  - [x] FibonacciHeap
   - [] SimpleWeight
 
 # LICENSE
