@@ -29,10 +29,10 @@ public interface WeightedGraph<V, E> {
 
     public LinkedList<V> getShortestPath(V source, V destination);
 
-    public int getMinimumDistance(V source, V destination);
+    public E getMinimumDistance(V source, V destination);
 
-    public Graph<V> getSpanningTree();
+    public WeightedGraph<V, E> getSpanningTree();
 
-    public Graph<V> getMinimumSpanningTree();
+    public WeightedGraph<V, E> getMinimumSpanningTree();
 }
 

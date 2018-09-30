@@ -1,16 +1,15 @@
 package org.simplegraph.graph;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.LinkedList;
-import org.simplegraph.interfaces.DirectedGraph;
+import org.simplegraph.interfaces.Summable;
 
-public class DirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implements DirectedGraph<V> {
+public class BaseDirectedSparseGraph<V, E> extends BaseSparseGraph<V, E> {
     /**
      * Default constructor
      */
-    public DirectedSparseGraph() {
+    public BaseDirectedSparseGraph() {
         super();
     }
 
@@ -18,19 +17,18 @@ public class DirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implemen
      * Create a graph with a starting size.
      * @param size starting size
      */
-    public DirectedSparseGraph(int size) {
+    public BaseDirectedSparseGraph(int size) {
         super(size);
     }
 
     /**
-     * Add an edge that goes from the first vertex to the second.
-     * Add the two vertices in the graph if they don't exists.
-     * @param  v1   first vertex
-     * @param  v2   second vertex
-     * @return      true if the graph has been modified
+     * Remove an edge that goes from the first vertex to the second.
+     * @param  v1 first vertex
+     * @param  v2 second vertex
+     * @return    true if the graph has been changed
      */
-    public boolean addEdge(V v1, V v2) {
-        return _addEdge(v1, v2, true);
+    public boolean removeEdge(V v1, V v2) {
+        return _removeEdge(v1, v2);
     }
 
     /**
@@ -57,6 +55,14 @@ public class DirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implemen
     }
 
     /**
+     * Get the number of edges in the graph.
+     * @return number of edges
+     */
+    public int countEdges() {
+        return super.countEdges() * 2;
+    }
+
+    /**
      * Get the incident vertices of a vertex.
      * @param  vertex the specified vertex
      * @return        a LinkedList containing the incident vertices of vertex,
@@ -70,7 +76,7 @@ public class DirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implemen
         LinkedList<V> vertices = new LinkedList<V>();
 
         // Get all incident vertices with vertex
-        for (Map.Entry<V, HashMap<V, Boolean>> entry : edges.entrySet()) {
+        for (Map.Entry<V, HashMap<V, E>> entry : edges.entrySet()) {
             if (entry.getValue().get(vertex) != null) {
                 vertices.add(entry.getKey());
             }
@@ -86,11 +92,7 @@ public class DirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implemen
      *                null if vertex is not contained in the graph
      */
     public LinkedList<V> getOutVertices(V vertex) {
-        if (!containsVertex(vertex)) {
-            return null;
-        }
-
-        return new LinkedList<V>(edges.get(vertex).keySet());
+        return super.getNeighbors(vertex);
     }
 
     /**
@@ -120,9 +122,4 @@ public class DirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implemen
 
         return getOutVertices(vertex).size();
     }
-
-    public DirectedGraph<V> getSpanningTree() {
-        return new DirectedSparseGraph<V>();
-    }
 }
-

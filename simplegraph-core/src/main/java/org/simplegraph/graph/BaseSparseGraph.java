@@ -59,15 +59,7 @@ public class BaseSparseGraph<V, E> {
         return edges.size();
     }
 
-    /**
-     * Add an edge that goes from the first vertex to the second.
-     * Add the two vertices in the graph if they don't exists.
-     * @param  v1   first vertex
-     * @param  v2   second vertex
-     * @param  edge edge to add
-     * @return      true if the graph has been modified
-     */
-    public boolean addEdge(V v1, V v2, E edge) {
+    protected boolean _addEdge(V v1, V v2, E edge) {
         // Add the two nodes to the graph if they don't exists
         if (!containsVertex(v1)) {
             addVertex(v1);
@@ -100,18 +92,22 @@ public class BaseSparseGraph<V, E> {
         return edges.get(v1).get(v2) != null;
     }
 
-    /**
-     * Remove an edge that goes from the first vertex to the second.
-     * @param  v1 first vertex
-     * @param  v2 second vertex
-     * @return    true if the graph has been changed
-     */
-    public boolean removeEdge(V v1, V v2) {
+    protected boolean _removeEdge(V v1, V v2) {
         if (!containsVertex(v1) || !containsVertex(v2)) {
             return false;
         }
 
         return edges.get(v1).remove(v2) != null;
+    }
+
+    /**
+     * Remove an edge between two vertices.
+     * @param  v1 first vertex
+     * @param  v2 second vertex
+     * @return    true if the graph has been changed
+     */
+    public boolean removeEdge(V v1, V v2) {
+        return (_removeEdge(v1, v2) || _removeEdge(v2,v1));
     }
 
     /**
@@ -125,7 +121,21 @@ public class BaseSparseGraph<V, E> {
             count += l.size();
         }
 
-        return count;
+        return count / 2;
+    }
+
+    /**
+     * Get the neighbors of a vertex
+     * @param  vertex the specified vertex
+     * @return        the collection of vertices that are neighbors of vertex
+     *                null if the vertex is not contained in the graph
+     */
+    public LinkedList<V> getNeighbors(V vertex) {
+        if (!containsVertex(vertex)) {
+            return null;
+        }
+
+        return new LinkedList<V>(edges.get(vertex).keySet());
     }
 
     /**
