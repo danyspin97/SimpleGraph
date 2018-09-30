@@ -3,17 +3,17 @@ package org.simplegraph.graph;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
-import org.simplegraph.interfaces.Graph;
+import org.simplegraph.interfaces.Summable;
 
-public class BaseSparseGraph<V> {
+public class BaseSparseGraph<V, E> {
     protected static final int DEFAULT_SIZE = 15;
-    protected HashMap<V, LinkedList<V>> edges;
+    protected HashMap<V, HashMap<V, E>> edges;
 
     /**
      * Default constructor
      */
     public BaseSparseGraph() {
-        edges = new HashMap<V, LinkedList<V>>(DEFAULT_SIZE);
+        edges = new HashMap<V, HashMap<V, E>>(DEFAULT_SIZE);
     }
 
     /**
@@ -21,7 +21,7 @@ public class BaseSparseGraph<V> {
      * @param size starting size
      */
     public BaseSparseGraph(int size) {
-        edges = new HashMap<V, LinkedList<V>>(size);
+        edges = new HashMap<V, HashMap<V, E>>(size);
     }
 
     /**
@@ -30,7 +30,7 @@ public class BaseSparseGraph<V> {
      * @return        true if the the graph has been modified
      */
     public boolean addVertex(V vertex) {
-        return edges.putIfAbsent(vertex, new LinkedList<V>()) == null;
+        return edges.putIfAbsent(vertex, new HashMap<V, E>()) == null;
     }
 
     /**
@@ -62,11 +62,12 @@ public class BaseSparseGraph<V> {
     /**
      * Add an edge that goes from the first vertex to the second.
      * Add the two vertices in the graph if they don't exists.
-     * @param  v1 first vertex
-     * @param  v2 second vertex
-     * @return    true if the graph has been modified
+     * @param  v1   first vertex
+     * @param  v2   second vertex
+     * @param  edge edge to add
+     * @return      true if the graph has been modified
      */
-    public boolean addEdge(V v1, V v2) {
+    public boolean addEdge(V v1, V v2, E edge) {
         // Add the two nodes to the graph if they don't exists
         if (!containsVertex(v1)) {
             addVertex(v1);
@@ -80,7 +81,7 @@ public class BaseSparseGraph<V> {
             return false;
         }
 
-        edges.get(v1).add(v2);
+        edges.get(v1).put(v2, edge);
 
         return true;
     }
@@ -96,7 +97,7 @@ public class BaseSparseGraph<V> {
             return false;
         }
 
-        return edges.get(v1).contains(v2);
+        return edges.get(v1).get(v2) != null;
     }
 
     /**
@@ -110,7 +111,7 @@ public class BaseSparseGraph<V> {
             return false;
         }
 
-        return edges.get(v1).remove(v2);
+        return edges.get(v1).remove(v2) != null;
     }
 
     /**
@@ -120,7 +121,7 @@ public class BaseSparseGraph<V> {
     public int countEdges() {
         int count = 0;
 
-        for (LinkedList<V> l : edges.values()) {
+        for (HashMap<V, E> l : edges.values()) {
             count += l.size();
         }
 
@@ -150,10 +151,6 @@ public class BaseSparseGraph<V> {
 
     public LinkedList<V> getPath(V source, V destination) {
         return new LinkedList<V>();
-    }
-
-    public Graph<V> getSpanningTree() {
-        return new UndirectedSparseGraph<V>();
     }
 }
 

@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import org.simplegraph.interfaces.Graph;
 
-public class UndirectedSparseGraph<V> extends BaseSparseGraph<V> implements Graph<V> {
+public class UndirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implements Graph<V> {
     /**
      * Default constructor
      */
@@ -29,7 +29,23 @@ public class UndirectedSparseGraph<V> extends BaseSparseGraph<V> implements Grap
      * @return    true if the graph has been modified
      */
     public boolean addEdge(V v1, V v2) {
-        return (super.addEdge(v1, v2) || super.addEdge(v2, v1));
+        // Add the two nodes to the graph if they don't exists
+        if (!containsVertex(v1)) {
+            addVertex(v1);
+        }
+        if (!containsVertex(v2)) {
+            addVertex(v2);
+        }
+
+        // If the are already connected
+        if (existsEdge(v1, v2)) {
+            return false;
+        }
+
+        edges.get(v1).put(v2, true);
+        edges.get(v2).put(v1, true);
+
+        return true;
     }
 
     /**
@@ -61,7 +77,11 @@ public class UndirectedSparseGraph<V> extends BaseSparseGraph<V> implements Grap
             return null;
         }
 
-        return edges.get(vertex);
+        return new LinkedList<V>(edges.get(vertex).keySet());
+    }
+
+    public Graph<V> getSpanningTree() {
+        return new UndirectedSparseGraph<V>();
     }
 }
 

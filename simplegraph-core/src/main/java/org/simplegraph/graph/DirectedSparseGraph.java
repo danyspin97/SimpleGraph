@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.LinkedList;
 import org.simplegraph.interfaces.DirectedGraph;
 
-public class DirectedSparseGraph<V> extends BaseSparseGraph<V> implements DirectedGraph<V> {
+public class DirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implements DirectedGraph<V> {
     /**
      * Default constructor
      */
@@ -20,6 +20,32 @@ public class DirectedSparseGraph<V> extends BaseSparseGraph<V> implements Direct
      */
     public DirectedSparseGraph(int size) {
         super(size);
+    }
+
+    /**
+     * Add an edge that goes from the first vertex to the second.
+     * Add the two vertices in the graph if they don't exists.
+     * @param  v1   first vertex
+     * @param  v2   second vertex
+     * @return      true if the graph has been modified
+     */
+    public boolean addEdge(V v1, V v2) {
+        // Add the two nodes to the graph if they don't exists
+        if (!containsVertex(v1)) {
+            addVertex(v1);
+        }
+        if (!containsVertex(v2)) {
+            addVertex(v2);
+        }
+
+        // If the are already connected
+        if (existsEdge(v1, v2)) {
+            return false;
+        }
+
+        edges.get(v1).put(v2, true);
+
+        return true;
     }
 
     /**
@@ -59,8 +85,8 @@ public class DirectedSparseGraph<V> extends BaseSparseGraph<V> implements Direct
         LinkedList<V> vertices = new LinkedList<V>();
 
         // Get all incident vertices with vertex
-        for (Map.Entry<V, LinkedList<V>> entry : edges.entrySet()) {
-            if (entry.getValue().contains(vertex)) {
+        for (Map.Entry<V, HashMap<V, Boolean>> entry : edges.entrySet()) {
+            if (entry.getValue().get(vertex) != null) {
                 vertices.add(entry.getKey());
             }
         }
@@ -79,7 +105,7 @@ public class DirectedSparseGraph<V> extends BaseSparseGraph<V> implements Direct
             return null;
         }
 
-        return edges.get(vertex);
+        return new LinkedList<V>(edges.get(vertex).keySet());
     }
 
     /**
@@ -108,6 +134,10 @@ public class DirectedSparseGraph<V> extends BaseSparseGraph<V> implements Direct
         }
 
         return getOutVertices(vertex).size();
+    }
+
+    public DirectedGraph<V> getSpanningTree() {
+        return new DirectedSparseGraph<V>();
     }
 }
 
