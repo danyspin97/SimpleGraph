@@ -7,8 +7,8 @@
   <packaging>pom</packaging>
   <name>simplegraph</name>
   <modules>
-    <module>simplegraph-core</module>
-    <module>simplegraph-interfaces</module>
+    <module>simplegraph-impl</module>
+    <module>simplegraph-interface</module>
     <module>simplegraph-util</module>
   </modules>
 </project>
