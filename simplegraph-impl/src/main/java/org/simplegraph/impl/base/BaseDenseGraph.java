@@ -28,15 +28,20 @@ public class BaseDenseGraph<V> {
     }
 
     protected void copyVertices(BaseDenseGraph<V> graph) {
+        size = graph.size;
         verticesCount = graph.verticesCount;
-        for (int i = 0; i < verticesCount; i++) {
+        for (int i = 0; i != verticesCount; i++) {
             V v = graph.verticesArray.get(i);
             if (v != null) {
                 verticesMap.put(v, i);
                 verticesArray.add(i, v);
                 continue;
             }
-            verticesArray.add(null);
+            verticesArray.set(i, null);
+        }
+
+        for (int i = verticesCount; i != size; i++) {
+            verticesArray.set(i, null);
         }
     }
 

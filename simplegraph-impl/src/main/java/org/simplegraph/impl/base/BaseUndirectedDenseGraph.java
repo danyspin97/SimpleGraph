@@ -81,6 +81,11 @@ public class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
             return false;
         }
 
+        // The last vertex has been removed
+        if (verticesCount == 0) {
+            return true;
+        }
+
         int rowLastVertex = getEdgesSize(verticesCount);
 
         int i = 0;
@@ -97,7 +102,8 @@ public class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         i++;
 
         while (i != verticesCount) {
-            edges.set(row += vertexIndex, edges.get(rowLastVertex + i));
+            row += vertexIndex;
+            edges.set(row, edges.get(rowLastVertex + i));
             edges.set(rowLastVertex + i, null);
             i++;
         }
@@ -112,7 +118,8 @@ public class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
 
         addVertex(v1);
         addVertex(v2);
-        return !edges.set(getEdgeIndex(v1, v2), edge).equals(edge);
+        // edge is not null, hence we can call a method on it
+        return !edge.equals(edges.set(getEdgeIndex(v1, v2), edge));
     }
 
     /**
