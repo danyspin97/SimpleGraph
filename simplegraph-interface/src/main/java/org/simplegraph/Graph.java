@@ -19,6 +19,8 @@ public interface Graph<V> {
 
     public LinkedList<V> getNeighbors(V vertex);
 
+    public int countVertices();
+
     public int countNeighbors(V vertex);
 
     public int countEdges();
