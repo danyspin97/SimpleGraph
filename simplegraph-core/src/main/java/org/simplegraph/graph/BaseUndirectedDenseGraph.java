@@ -338,10 +338,10 @@ public class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
     }
 
     public BaseUndirectedDenseGraph<V,E> _getSpanningTree() {
-        return new UndirectedDenseGraph<V>();
+        return null;
     }
 
     public Graph<V> getShortestPath() {
-        return new UndirectedDenseGraph<V>();
+        return null;
     }
 }

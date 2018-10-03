@@ -27,7 +27,8 @@ public class UndirectedWeightedDenseGraph<V, E> extends BaseUndirectedDenseGraph
     }
 
     public UndirectedWeightedDenseGraph(UndirectedWeightedSparseGraph<V, E> graph) {
-        super(graph);
+        // TODO
+        // super(graph);
     }
 
     /**
@@ -42,15 +43,27 @@ public class UndirectedWeightedDenseGraph<V, E> extends BaseUndirectedDenseGraph
         return _addEdge(v1, v2, edge);
     }
 
+    /**
+     * Get a list with the edges contained in the graph.
+     * @return LinkedList of the edges
+     */
+    @SuppressWarnings("unchecked")
+    public LinkedList<E> getEdges() {
+        return (LinkedList<E>) edges.clone();
+    }
+
     public WeightedGraph<V, E> getSpanningTree() {
-        return new UndirectedWeightedDenseGraph<V, E>(_getSpanningTree());
+        // TODO
+        return null;
     }
 
     public E getMinimumDistance(V source, V destination) {
+        // TODO
         return null;
     }
 
     public LinkedList<V> getShortestPath(V source, V destination) {
+        // TODO
         return null;
     }
 

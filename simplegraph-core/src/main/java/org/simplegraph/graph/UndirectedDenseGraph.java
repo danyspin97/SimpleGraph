@@ -26,8 +26,10 @@ public class UndirectedDenseGraph<V> extends BaseUndirectedDenseGraph<V, Boolean
     }
 
     public UndirectedDenseGraph(UndirectedDenseGraph<V> graph) {
-        super(graph);
+        // TODO
+        // super(graph);
     }
+
     /**
      * Add an edge between two vertices.
      * Add the two vertices in the graph if they don't exists
