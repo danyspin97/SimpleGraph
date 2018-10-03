@@ -52,7 +52,7 @@
 * dequeueMin to extract it.
 */
 
-package org.simplegraph.utils;
+package org.simplegraph.util;
 
 import java.util.*; // For ArrayList
 

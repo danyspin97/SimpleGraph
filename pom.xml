@@ -9,6 +9,6 @@
   <modules>
     <module>simplegraph-core</module>
     <module>simplegraph-interfaces</module>
-    <module>simplegraph-utils</module>
+    <module>simplegraph-util</module>
   </modules>
 </project>
