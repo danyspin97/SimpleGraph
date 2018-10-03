@@ -4,7 +4,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.LinkedList;
+
 import org.simplegraph.DirectedGraph;
+import org.simplegraph.impl.base.BaseSparseGraph;
 
 public class DirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implements DirectedGraph<V> {
     /**

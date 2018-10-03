@@ -1,6 +1,8 @@
-package org.simplegraph.impl;
+package org.simplegraph.impl.base;
 
 import java.util.LinkedList;
+
+import org.simplegraph.DirectedGraph;
 
 public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
     protected E[][] edges;
@@ -310,7 +312,7 @@ public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * Get a spanning tree if it exists.
      * @return Graph containing a spanning tree if it exists, null otherwise.
      */
-    public DirectedDenseGraph<V> getSpanningTree() {
-        return new DirectedDenseGraph<V>();
+    public DirectedGraph<V> getSpanningTree() {
+        return null;
     }
 }

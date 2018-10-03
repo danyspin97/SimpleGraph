@@ -4,8 +4,9 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.LinkedList;
-import org.simplegraph.WeightedGraph;
+
 import org.simplegraph.DirectedWeightedGraph;
+import org.simplegraph.impl.base.BaseDirectedSparseGraph;
 
 public class DirectedWeightedSparseGraph<V, E> extends BaseDirectedSparseGraph<V, E> implements DirectedWeightedGraph<V, E> {
     /**

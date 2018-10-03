@@ -1,4 +1,4 @@
-package org.simplegraph.impl;
+package org.simplegraph.impl.base;
 
 import java.util.ArrayList;
 import java.util.Collection;

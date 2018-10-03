@@ -1,4 +1,4 @@
-package org.simplegraph.impl;
+package org.simplegraph.impl.base;
 
 import java.util.Collection;
 import java.util.HashMap;

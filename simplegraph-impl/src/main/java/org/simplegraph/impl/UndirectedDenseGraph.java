@@ -9,7 +9,9 @@ import java.util.LinkedList;
 import java.util.HashMap;
 import java.util.Random;
 import java.util.function.UnaryOperator;
+
 import org.simplegraph.Graph;
+import org.simplegraph.impl.base.BaseUndirectedDenseGraph;
 
 /**
  * Undirected graph implemention for dense graphs.
