@@ -75,14 +75,26 @@ public class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * @return        true if the graph has been modified
      */
     public boolean removeVertex(V vertex) {
-        int vertexIndex = verticesMap.get(vertex);
+        Integer vertexIndex = verticesMap.get(vertex);
 
         if (!super.removeVertex(vertex)) {
             return false;
         }
 
         // The last vertex has been removed
+        // and verticesCount has already been decreased
         if (verticesCount == 0) {
+            return true;
+        }
+
+        // If the one to remove is already the last
+        if (verticesCount == vertexIndex) {
+            int first = getEdgesSize(vertexIndex);
+            int last = first + verticesCount;
+            for (int i = first; i != first + verticesCount; i++) {
+                edges.set(i, null);
+            }
+
             return true;
         }
 

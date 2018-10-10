@@ -31,7 +31,9 @@ public class UndirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implem
      * @return    true if the graph has been modified
      */
     public boolean addEdge(V v1, V v2) {
-        return _addEdge(v1, v2, true) || _addEdge(v1, v2, true);
+        boolean a = _addEdge(v1, v2, true);
+        boolean b = _addEdge(v2, v1, true);
+        return a || b;
     }
 
     public Graph<V> getSpanningTree() {

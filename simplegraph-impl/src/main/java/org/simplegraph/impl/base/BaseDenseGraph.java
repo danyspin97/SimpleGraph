@@ -101,7 +101,6 @@ public class BaseDenseGraph<V> {
         return true;
     }
 
-
     /**
      * Remove a vertex from the graph
      * @param  vertex the vertex to remove
@@ -130,6 +129,14 @@ public class BaseDenseGraph<V> {
      * @return        true if the graph contains vertex
      */
     public boolean containsVertex(V vertex) {
+        if (vertex == null) {
+            return false;
+        }
+
+        if (verticesCount == 0) {
+            return false;
+        }
+
         return verticesMap.containsKey(vertex);
     }
 
