@@ -14,7 +14,7 @@ public abstract class TestUndirectedGraph extends TestVerticesGraph {
         g.addVertex("C");
         g.addVertex("D");
         g.addEdge("C", "D");
-        assertEquals(g.countEdges(), edgesCount + 1);
+        assertEquals(edgesCount + 1, g.countEdges());
     }
 
     // The graph is undirected, so a,b is the same as b,a
@@ -26,5 +26,69 @@ public abstract class TestUndirectedGraph extends TestVerticesGraph {
         int edgesCount = g.countEdges();
         g.addEdge("F", "E");
         assertEquals(g.countEdges(), edgesCount);
+    }
+
+    // Add a large number of edges
+    @Test
+    public void testAddLargeNumberOfEdges() {
+        int edgesCount = g.countEdges();
+        int verticesToAdd = 100;
+        for (int i = 0; i != verticesToAdd; i++) {
+            g.addVertex(String.valueOf(i));
+        }
+
+        for (int i = 0; i != verticesToAdd * 4; i++) {
+            g.addEdge(String.valueOf(Math.random() * verticesToAdd), String.valueOf(Math.random() * Math.random()));
+        }
+
+        assertEquals(g.countEdges(), edgesCount + verticesToAdd * 4);
+    }
+
+    // Remove a large number of edges
+    @Test
+    public void testRemoveLargeNumberOfEdges() {
+        int verticesToAdd = 100;
+        for (int i = 0; i != verticesToAdd; i++) {
+            g.addVertex(String.valueOf(i));
+        }
+
+        for (int i = 0; i != verticesToAdd * 4; i++) {
+            g.addEdge(String.valueOf(Math.random() * verticesToAdd), String.valueOf(Math.random() * Math.random()));
+        }
+
+        for (String s : g.getVertices()) {
+            for (String n : g.getNeighbors(s)){
+                g.removeEdge(s, n);   
+            }
+        }
+
+        assertEquals(0, g.countEdges());
+    }
+
+    // Remove a single edge
+    @Test
+    public void testRemoveEdge() {
+        g.addVertex("A");
+        g.addVertex("B");
+        g.addEdge("A", "B");
+        assertTrue(g.removeEdge("A", "B"));
+    }
+
+    @Test
+    public void testRemoveVertexWithEdges() {
+        int verticesToAdd = 100;
+        for (int i = 0; i != verticesToAdd; i++) {
+            g.addVertex(String.valueOf(i));
+        }
+
+        for (int i = 0; i != verticesToAdd * 4; i++) {
+            g.addEdge(String.valueOf(Math.random() * verticesToAdd), String.valueOf(Math.random() * Math.random()));
+        }
+
+        for (String s : g.getVertices()) {
+            g.removeVertex(s);
+        }
+
+        assertEquals(0, g.countEdges());
     }
 }

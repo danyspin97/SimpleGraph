@@ -66,6 +66,6 @@ public abstract class TestVerticesGraph {
 
     @Test
     public void testRemoveVertexNotAdded() {
-
+        assertFalse(g.removeVertex("A"));
     }
 }
