@@ -65,7 +65,7 @@ public class BaseSparseGraph<V, E> {
 
     protected boolean _addEdge(V v1, V v2, E edge) {
         // null is not a valid vertex
-        if (v1 == null || v2 == null) {
+        if (v1 == null || v2 == null || edge == null) {
             return false;
         }
 

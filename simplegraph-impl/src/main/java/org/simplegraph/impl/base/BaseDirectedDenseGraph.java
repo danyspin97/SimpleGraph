@@ -29,11 +29,14 @@ public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * Initialize all attributes for storing graph data.
      * @param startSize Number of vertices to store initially in the graph.
      */
+    @SuppressWarnings("unchecked")
     protected void initialize(int startSize) {
         super.initialize(startSize);
 
+        edges = (E[][]) new Object[startSize][startSize];
+
         for (int i = 0; i != size; ++i) {
-            for (int j = 0; j < size; j++) {
+            for (int j = 0; j != size; j++) {
                 edges[i][j] = null;
             }
         }
@@ -100,6 +103,11 @@ public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * @return      true if the graph has been modified
      */
     public boolean _addEdge(V v1, V v2, E edge) {
+        // Null is not a valid value
+        if (v1 == null || v2 == null || edge == null) {
+            return false;
+        }
+
         int i1 = getVertexIndex(v1);
         int i2 = getVertexIndex(v2);
 
@@ -115,9 +123,10 @@ public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
             return false;
         }
 
+        // get last value to check if the graph has been modified
         E t = edges[i1][i2];
         edges[i1][i2] = edge;
-        return edge != null && !t.equals(edge);
+        return t == null || !edge.equals(t);
     }
 
     /**
@@ -199,6 +208,25 @@ public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         }
 
         return getNeighbors(vertex).size();
+    }
+
+    /**
+     * Get how many edges the graph contains.
+     * @return number of edges
+     */
+    public int countEdges() {
+        int count = 0;
+
+        for (int i = 0; i != verticesCount; i++) {
+            for (int j = 0; j != verticesCount; j++) {
+                if (edges[i][j] != null) {
+                    count++;
+                }
+            }
+        }
+        System.out.println(count);
+
+        return 0;
     }
 
     /**

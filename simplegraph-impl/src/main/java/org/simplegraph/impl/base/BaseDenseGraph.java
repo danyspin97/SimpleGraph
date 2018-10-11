@@ -19,7 +19,7 @@ public class BaseDenseGraph<V> {
 
         // Fill vertices array with null
         for (int i = 0; i != size; ++i) {
-            verticesArray.add(i, null);
+            verticesArray.add(null);
         }
 
         // We expect the hashmap to be full
@@ -69,9 +69,9 @@ public class BaseDenseGraph<V> {
      * @param vertex Selected vertex.
      * @return Index of the selected vertex.
      */
-    protected int getVertexIndex(V vertex)
-    {
-        return verticesMap.containsKey(vertex) ? verticesMap.get(vertex) : -1 ;
+    protected int getVertexIndex(V vertex) {
+        if (vertex == null) return -1;
+        return verticesMap.containsKey(vertex) ? verticesMap.get(vertex) : -1;
     }
 
     /**
@@ -80,6 +80,11 @@ public class BaseDenseGraph<V> {
      * @return        true if the the graph has been modified
      */
     public boolean addVertex(V vertex) {
+        // null is not a valid vertex
+        if (vertex == null) {
+            return false;
+        }
+
         if (containsVertex(vertex)) {
             return false;
         }

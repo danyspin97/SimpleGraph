@@ -8,6 +8,28 @@ import org.simplegraph.*;
 public abstract class TestEdgesGraph extends TestVerticesGraph {
     @Test
     public void testAddEdge() {
+        g.addVertex("C");
+        g.addVertex("D");
+        assertTrue(g.addEdge("C", "D"));
+    }
+
+    @Test
+    public void testExistsEdge() {
+        g.addVertex("C");
+        g.addVertex("D");
+        g.addEdge("C", "D");
+        assertTrue(g.existsEdge("C", "D"));
+    }
+
+    @Test
+    public void testNotExistsEdge() {
+        g.addVertex("C");
+        g.addVertex("D");
+        assertFalse(g.existsEdge("C", "D"));
+    }
+
+    @Test
+    public void testCountEdges() {
         int edgesCount = g.countEdges();
         g.addVertex("C");
         g.addVertex("D");
@@ -30,10 +52,10 @@ public abstract class TestEdgesGraph extends TestVerticesGraph {
         }
 
         for (int i = 0; i != verticesToAdd * 4; i++) {
-            g.addEdge(String.valueOf(Math.random() * verticesToAdd), String.valueOf(Math.random() * Math.random()));
+            g.addEdge(String.valueOf(Math.random() * verticesToAdd), String.valueOf(Math.random() * verticesToAdd));
         }
 
-        assertEquals(g.countEdges(), edgesCount + verticesToAdd * 4);
+        assertNotEquals(edgesCount, g.countEdges());
     }
 
     // Remove a large number of edges

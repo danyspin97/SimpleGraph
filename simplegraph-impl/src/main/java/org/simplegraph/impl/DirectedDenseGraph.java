@@ -40,18 +40,4 @@ public class DirectedDenseGraph<V> extends BaseDirectedDenseGraph<V, Boolean> im
     public boolean addEdge(V v1, V v2) {
         return _addEdge(v1, v2, true);
     }
-
-    /**
-     * Get how many edges the graph contains.
-     * @return number of edges
-     */
-    public int countEdges() {
-        int count = 0;
-
-        for (V vertex : verticesArray) {
-            count += countNeighbors(vertex);
-        }
-
-        return 0;
-    }
 }
