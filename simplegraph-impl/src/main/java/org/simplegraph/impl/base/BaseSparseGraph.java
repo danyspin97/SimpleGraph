@@ -30,6 +30,10 @@ public class BaseSparseGraph<V, E> {
      * @return        true if the the graph has been modified
      */
     public boolean addVertex(V vertex) {
+        if (vertex == null) {
+            return false;
+        }
+
         return edges.putIfAbsent(vertex, new HashMap<V, E>()) == null;
     }
 
@@ -60,6 +64,11 @@ public class BaseSparseGraph<V, E> {
     }
 
     protected boolean _addEdge(V v1, V v2, E edge) {
+        // null is not a valid vertex
+        if (v1 == null || v2 == null) {
+            return false;
+        }
+
         // Add the two nodes to the graph if they don't exists
         if (!containsVertex(v1)) {
             addVertex(v1);

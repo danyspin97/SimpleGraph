@@ -84,6 +84,10 @@ public class BaseDenseGraph<V> {
             return false;
         }
 
+        if (vertex == null) {
+            return false;
+        }
+
         // Add the vertex to both the array and the map
         verticesArray.set(verticesCount, vertex);
         verticesMap.put(vertex, verticesCount);

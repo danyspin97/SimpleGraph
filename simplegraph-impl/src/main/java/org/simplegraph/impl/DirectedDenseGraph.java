@@ -11,7 +11,7 @@ public class DirectedDenseGraph<V> extends BaseDirectedDenseGraph<V, Boolean> im
      * Default constructor
      */
     public DirectedDenseGraph() {
-        super();
+        initialize(DEFAULT_SIZE);
     }
 
     /**
@@ -19,7 +19,7 @@ public class DirectedDenseGraph<V> extends BaseDirectedDenseGraph<V, Boolean> im
      * @param size starting size
      */
     public DirectedDenseGraph(int size) {
-        super(size);
+        initialize(size);
     }
 
     /**
@@ -27,7 +27,7 @@ public class DirectedDenseGraph<V> extends BaseDirectedDenseGraph<V, Boolean> im
      * @param graph graph to copy
      */
     public DirectedDenseGraph(DirectedDenseGraph<V> graph) {
-        super(graph);
+        copy(graph);
     }
 
     /**

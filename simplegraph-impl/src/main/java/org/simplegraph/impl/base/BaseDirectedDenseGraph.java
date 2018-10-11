@@ -8,29 +8,14 @@ public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
     protected E[][] edges;
 
     /**
-     * Default constructor
-     */
-    public BaseDirectedDenseGraph() {
-        initialize(DEFAULT_SIZE);
-    }
-
-    /**
-     * Create a graph of a specified size
-     * @param size starting size
-     */
-    public BaseDirectedDenseGraph(int size) {
-        initialize(size);
-    }
-
-    /**
      * Copy constructor
      * @param graph graph to copy
      */
     @SuppressWarnings("unchecked")
-    public BaseDirectedDenseGraph(BaseDirectedDenseGraph<V,E> graph) {
+    protected void copy(BaseDirectedDenseGraph<V,E> graph) {
         initialize(graph.size);
 
-        super.copyVertices(graph);
+        copyVertices(graph);
 
         edges = (E[][]) new Object [size][size];
         for (int i = 0; i < size; i++) {

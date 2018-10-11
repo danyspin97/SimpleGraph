@@ -1,13 +1,13 @@
 package org.simplegraph.impl;
 
-import static org.junit.Assert.*; // Allows you to use directly assert methods, such as assertTrue(...), assertNull(...)
-import org.junit.Test;
-import org.junit.Before;
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
 
 import org.simplegraph.*;
 
 public abstract class TestVerticesGraph {
-    protected Graph<String> g;
+    static public Graph<String> g;
 
 	@Test
 	public void testAddVertex() {
@@ -67,5 +67,10 @@ public abstract class TestVerticesGraph {
     @Test
     public void testRemoveVertexNotAdded() {
         assertFalse(g.removeVertex("A"));
+    }
+
+    @Test
+    public void testAddNullVertex() {
+        assertFalse(g.addVertex(null));
     }
 }
