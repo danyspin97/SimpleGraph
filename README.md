@@ -1,5 +1,7 @@
 # SimpleGraph
 
+[![Build Status](https://travis-ci.org/DanySpin97/SimpleGraph.svg?branch=master)](https://travis-ci.org/DanySpin97/SimpleGraph)
+
 Basic graph interfaces and implementations in Java.
 
 ## Interfaces
