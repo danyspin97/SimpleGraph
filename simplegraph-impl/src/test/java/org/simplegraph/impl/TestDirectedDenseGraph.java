@@ -8,6 +8,7 @@ import org.simplegraph.*;
 public class TestDirectedDenseGraph extends TestDirectedGraph {
     @BeforeEach
     public void init() {
-        g = new DirectedDenseGraph<String>();
+        dg = new DirectedDenseGraph<String>();
+        g = dg;
     }
 }

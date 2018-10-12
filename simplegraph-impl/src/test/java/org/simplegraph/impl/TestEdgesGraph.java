@@ -29,6 +29,14 @@ public abstract class TestEdgesGraph extends TestVerticesGraph {
     }
 
     @Test
+    public void testAddEdgeAndVertices() {
+        assertTrue(g.addEdge("A", "B"));
+        assertTrue(g.containsVertex("A"));
+        assertTrue(g.containsVertex("B"));
+        assertTrue(g.existsEdge("A", "B"));
+    }
+
+    @Test
     public void testCountEdges() {
         int edgesCount = g.countEdges();
         g.addVertex("C");
@@ -47,15 +55,12 @@ public abstract class TestEdgesGraph extends TestVerticesGraph {
     public void testAddLargeNumberOfEdges() {
         int edgesCount = g.countEdges();
         int verticesToAdd = 100;
-        for (int i = 0; i != verticesToAdd; i++) {
-            g.addVertex(String.valueOf(i));
-        }
 
         for (int i = 0; i != verticesToAdd * 4; i++) {
             g.addEdge(String.valueOf(Math.random() * verticesToAdd), String.valueOf(Math.random() * verticesToAdd));
         }
 
-        assertNotEquals(edgesCount, g.countEdges());
+        assertNotSame(edgesCount, g.countEdges());
     }
 
     // Remove a large number of edges
