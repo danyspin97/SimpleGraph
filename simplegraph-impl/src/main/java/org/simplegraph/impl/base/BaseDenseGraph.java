@@ -70,8 +70,10 @@ public class BaseDenseGraph<V> {
      * @return Index of the selected vertex.
      */
     protected int getVertexIndex(V vertex) {
+        // null is not a valid vertex
         if (vertex == null) return -1;
-        return verticesMap.containsKey(vertex) ? verticesMap.get(vertex) : -1;
+
+        return verticesMap.getOrDefault(vertex, -1);
     }
 
     /**
@@ -89,11 +91,9 @@ public class BaseDenseGraph<V> {
             return false;
         }
 
-        if (vertex == null) {
-            return false;
-        }
-
         // Add the vertex to both the array and the map
+        // verticesCount is at most size - 1
+        // using it as index is safe
         verticesArray.set(verticesCount, vertex);
         verticesMap.put(vertex, verticesCount);
 
@@ -120,10 +120,14 @@ public class BaseDenseGraph<V> {
             return false;
         }
 
+        // Do not check if vertex is the last one
+        // because it works too
+
         verticesCount--;
 
         // Swap the last vertex with the one to remove
         int vertexIndex = verticesMap.get(vertex);
+        // we use verticesCount as index because it has already been decreased
         verticesMap.replace(verticesArray.get(verticesCount), vertexIndex);
         verticesMap.remove(vertex);
         verticesArray.set(vertexIndex, verticesArray.get(verticesCount));

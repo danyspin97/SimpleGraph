@@ -58,11 +58,14 @@ public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
             }
         }
 
-        for (int i = oldSize; i != size; ++i) {
+        // Set all the unused positions to null
+        for (int i = 0; i != size; ++i) {
             for (int j = oldSize; j != size; j++) {
                 newMatrix[i][j] = null;
+                newMatrix[j][i] = null;
             }
         }
+        
         edges = newMatrix;
     }
 
@@ -112,11 +115,19 @@ public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         int i2 = getVertexIndex(v2);
 
         if (i1 == -1) {
+            // the first is not contained but it's the same as the second
+            if (v1.equals(v2)) {
+                return false;
+            }
+
             addVertex(v1);
+            // get the index of the newly added vertex
+            i1 = getVertexIndex(v1);
         }
 
         if (i2 == -1) {
             addVertex(v2);
+            i2 = getVertexIndex(v2);
         }
 
         if (i1 == i2) {
@@ -224,9 +235,8 @@ public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
                 }
             }
         }
-        System.out.println(count);
 
-        return 0;
+        return count;
     }
 
     /**
@@ -265,6 +275,11 @@ public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
 
         LinkedList<V> neighbors = new LinkedList<V>();
         int vertexIndex = verticesMap.get(vertex);
+
+        // If there is only one vertex
+        if (verticesCount == 1) {
+            return neighbors;
+        }
 
         for (int i = 0; i != verticesCount; i++) {
             if (edges[vertexIndex][i] != null) {
