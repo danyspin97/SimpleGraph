@@ -6,9 +6,9 @@ import java.util.Map;
 import java.util.LinkedList;
 
 import org.simplegraph.DirectedGraph;
-import org.simplegraph.impl.base.BaseSparseGraph;
+import org.simplegraph.impl.base.BaseDirectedSparseGraph;
 
-public class DirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implements DirectedGraph<V> {
+public class DirectedSparseGraph<V> extends BaseDirectedSparseGraph<V, Boolean> implements DirectedGraph<V> {
     /**
      * Default constructor
      */

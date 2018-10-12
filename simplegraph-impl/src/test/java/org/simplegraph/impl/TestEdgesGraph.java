@@ -30,19 +30,22 @@ public abstract class TestEdgesGraph extends TestVerticesGraph {
 
     @Test
     public void testAddEdgeAndVertices() {
-        assertTrue(g.addEdge("A", "B"));
-        assertTrue(g.containsVertex("A"));
-        assertTrue(g.containsVertex("B"));
+        g.addEdge("A", "B");
         assertTrue(g.existsEdge("A", "B"));
+    }
+
+    @Test
+    public void testAddEdgesBetweenSameVertexNotContained() {
+        assertFalse(g.addEdge("A", "A"));
+        assertFalse(g.containsVertex("A"));
     }
 
     @Test
     public void testCountEdges() {
         int edgesCount = g.countEdges();
-        g.addVertex("C");
-        g.addVertex("D");
         g.addEdge("C", "D");
-        assertEquals(edgesCount + 1, g.countEdges());
+        g.addEdge("E", "F");
+        assertEquals(edgesCount + 2, g.countEdges());
     }
 
     @Test

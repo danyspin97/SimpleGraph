@@ -71,8 +71,14 @@ public class BaseSparseGraph<V, E> {
 
         // Add the two nodes to the graph if they don't exists
         if (!containsVertex(v1)) {
+            // But fail if they are the same
+            if (v1.equals(v2)) {
+                return false;
+            }
+
             addVertex(v1);
         }
+
         if (!containsVertex(v2)) {
             addVertex(v2);
         }
@@ -119,18 +125,22 @@ public class BaseSparseGraph<V, E> {
         return (_removeEdge(v1, v2) || _removeEdge(v2,v1));
     }
 
-    /**
-     * Get the number of edges in the graph.
-     * @return number of edges
-     */
-    public int countEdges() {
+    protected int _countEdges() {
         int count = 0;
 
         for (HashMap<V, E> l : edges.values()) {
             count += l.size();
         }
 
-        return count / 2;
+        return count;
+    }
+
+    /**
+     * Get the number of edges in the graph.
+     * @return number of edges
+     */
+    public int countEdges() {
+        return _countEdges() / 2;
     }
 
     /**

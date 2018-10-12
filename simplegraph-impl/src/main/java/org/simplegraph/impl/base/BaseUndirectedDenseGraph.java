@@ -129,6 +129,10 @@ public class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
             return false;
         }
 
+        if (v1.equals(v2)) {
+            return false;
+        }
+
         addVertex(v1);
         addVertex(v2);
         // edge is not null, hence we can call a method on it

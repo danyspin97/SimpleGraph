@@ -59,7 +59,7 @@ public class BaseDirectedSparseGraph<V, E> extends BaseSparseGraph<V, E> {
      * @return number of edges
      */
     public int countEdges() {
-        return super.countEdges() * 2;
+        return _countEdges();
     }
 
     /**
