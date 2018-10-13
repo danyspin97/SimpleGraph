@@ -1,5 +1,7 @@
 package org.simplegraph.impl.base;
 
+import java.util.Arrays;
+import java.util.ArrayDeque;
 import java.util.LinkedList;
 
 import org.simplegraph.DirectedGraph;
@@ -329,11 +331,72 @@ public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * @return            true if a path exists
      */
     public boolean existsPath(V source, V destination) {
-        return true;
+        LinkedList<V> path = getPath(source, destination);
+        if (path == null) {
+            return false;
+        }
+
+        return path.size() != 0;
     }
 
+    /**
+     * Get a path between a source and a destination
+     * @param  source      The vertex from where the path shall begin
+     * @param  destination The vertex from where the path shall end
+     * @return             Ordered LinkedList of the vertices that form a path
+     *                     between source and destination, null if source
+     *                     and destination are the same or if they are not
+     *                     contained in the graph, an empty LinkedList if
+     *                     there is no path between them
+     */
     public LinkedList<V> getPath(V source, V destination) {
-        return new LinkedList<V>();
+        int i1, i2;
+
+        if ((i1 = getVertexIndex(source)) == -1 || (i2 = getVertexIndex(destination)) == -1) {
+            return null;
+        }
+
+        if (i1 == i2) {
+            return null;
+        }
+
+        int parent[] = new int[verticesCount];
+        Arrays.fill(parent, -1);
+        ArrayDeque<Integer> queue = new ArrayDeque<Integer>(verticesCount * verticesCount);
+        queue.add(i1);
+
+        Integer current = -1;
+        int row;
+
+        while ((current = queue.pollFirst()) != null) {
+
+            if (current == i2) {
+                break;
+            }
+
+            // Iterate over "current" neighbors
+            for (int i = 0; i != verticesCount; i++) {
+                // If the vertex has not been processes
+                if (edges[current][i] != null && parent[i] == -1) {
+                    queue.add(i);
+                    parent[i] = current;
+                }
+            }
+        }
+
+        LinkedList<V> path = new LinkedList<V>();
+
+        if (current != null && current == i2) {
+
+            do {
+                path.addFirst(verticesArray.get(current));
+            } while ((current = parent[current]) != i1);
+
+            path.addFirst(source);
+            return path;
+        }
+
+        return path;
     }
 
     /**

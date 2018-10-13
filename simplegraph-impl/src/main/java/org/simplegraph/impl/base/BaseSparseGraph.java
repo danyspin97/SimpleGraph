@@ -1,6 +1,6 @@
 package org.simplegraph.impl.base;
 
-import java.util.Collection;
+import java.util.ArrayDeque;
 import java.util.HashMap;
 import java.util.LinkedList;
 import org.simplegraph.Summable;
@@ -178,8 +178,73 @@ public class BaseSparseGraph<V, E> {
         return new LinkedList<V>(edges.keySet());
     }
 
+    /**
+     * Get a path between a source and a destination
+     * @param source      source vertex
+     * @param destination destination vertex
+     * @return            LinkedList containing the vertices that
+     *                    compose the path, in order; an empty LinkedList if
+     *                    there is no path, null if the source and the
+     *                    destination are equals or are not contained in the
+     *                    graph
+     */
     public LinkedList<V> getPath(V source, V destination) {
-        return new LinkedList<V>();
+        if (!edges.containsKey(source) || !edges.containsKey(destination)) {
+            return null;
+        }
+
+        if (source.equals(destination)) {
+            return null;
+        }
+
+        // Based on https://en.wikipedia.org/wiki/Breadth-first_search
+        HashMap<V, V> parent = new HashMap<V, V>();
+        ArrayDeque<V> queue = new ArrayDeque<V>(edges.size());
+        queue.add(source);
+
+        V current = null;
+
+        while ((current = queue.pollFirst()) != null) {
+            if (current == destination) {
+                break;
+            }
+
+            for (V neighbor : edges.get(current).keySet()) {
+                // if the vertex has not been already processed
+                if (!parent.containsKey(neighbor)) {
+                    queue.add(neighbor);
+                    parent.put(neighbor, current);
+                }
+            }
+        }
+
+        LinkedList<V> path = new LinkedList<V>();
+
+        if (destination.equals(current)) {
+            do {
+                path.addFirst(current);
+            } while (!(current = parent.get(current)).equals(source));
+
+            path.addFirst(source);
+            return path;
+        }
+
+        return path;
+    }
+
+    /**
+     * Does a path exists between source and destination.
+     * @param source      source vertex
+     * @param destination destination vertex
+     * @return            true if a path exists
+     */
+    public boolean existsPath(V source, V destination) {
+        LinkedList<V> path = getPath(source, destination);
+        if (path == null) {
+            return false;
+        }
+
+        return path.size() != 0;
     }
 }
 

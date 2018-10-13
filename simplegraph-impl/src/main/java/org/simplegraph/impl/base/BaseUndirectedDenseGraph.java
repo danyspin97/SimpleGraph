@@ -280,11 +280,11 @@ public class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         return count;
     }
     /**
-     * Get a path between source and destination.
+     * Get a path between a source and a destination
      * @param source      source vertex
      * @param destination destination vertex
-     * @return            return a LinkedList containing the vertices that
-     *                    compose the path, in order; the LinkedList is empty if
+     * @return            a LinkedList containing the vertices that
+     *                    compose the path, in order; an empty LinkedList if
      *                    there is no path, null if the source and the
      *                    destination are equals or are not contained in the
      *                    graph
@@ -314,11 +314,11 @@ public class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
                 break;
             }
 
-            row = current * (current + 1) / 2;
+            row = getEdgesSize(current);
             int k = 0;
 
             while (k != current) {
-                if ((edges.get(row + k) != null) && (parent[k] != -1)) {
+                if ((edges.get(row + k) != null) && (parent[k] == -1)) {
                     queue.add(k);
                     parent[k] = current;
                 }
@@ -328,11 +328,17 @@ public class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
 
             row += k;
 
-            while (++k != verticesCount) {
-                if ((edges.get(row += k) != null) && (parent[k] != -1)) {
+            k++;
+
+            while (k != verticesCount) {
+                if ((edges.get(row + current) != null) && (parent[k] == -1)) {
                     queue.add(k);
                     parent[k] = current;
                 }
+
+                row += k;
+
+                k++;
             }
         }
 
@@ -358,7 +364,12 @@ public class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * @return            true if a path exists
      */
     public boolean existsPath(V source, V destination) {
-        return getPath(source, destination).size() != 0;
+        LinkedList<V> path = getPath(source, destination);
+        if (path == null) {
+            return false;
+        }
+
+        return path.size() != 0;
     }
 
     public BaseUndirectedDenseGraph<V,E> _getSpanningTree() {
