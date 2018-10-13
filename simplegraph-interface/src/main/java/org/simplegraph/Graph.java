@@ -27,6 +27,8 @@ public interface Graph<V> {
 
     public LinkedList<V> getPath(V source, V destination);
 
+    public boolean existsPath(V source, V destination);
+
     public Graph<V> getSpanningTree();
 }
 
