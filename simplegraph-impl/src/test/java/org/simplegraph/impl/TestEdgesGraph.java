@@ -1,5 +1,7 @@
 package org.simplegraph.impl;
 
+import java.util.LinkedList;
+
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
@@ -112,5 +114,51 @@ public abstract class TestEdgesGraph extends TestVerticesGraph {
         }
 
         assertEquals(0, g.countEdges());
+    }
+
+    @Test
+    public void testExistsPath() {
+        g.addEdge("A", "B");
+        g.addEdge("B", "C");
+        g.addEdge("C", "D");
+        assertTrue(g.existsPath("A", "D"));
+    }
+
+    @Test
+    public void testPathBetweenNonExistentVertices() {
+        assertFalse(g.existsPath("A", "B"));
+    }
+
+    @Test
+    public void testExistsPathInNullPath() {
+        g.addEdge("A", "C");
+        g.addEdge("D", "B");
+        assertFalse(g.existsPath("A", "B"));
+    }
+
+    @Test
+    public void testGetPath() {
+        g.addEdge("A", "B");
+        g.addEdge("B", "C");
+        LinkedList<String>  path = g.getPath("A", "C");
+        assertArrayEquals(new String[] { "A", "B", "C" }, path.toArray());
+    }
+
+    @Test
+    public void testPathDoesNotExists() {
+        g.addEdge("A", "B");
+        g.addEdge("C", "D");
+        assertArrayEquals(new String[] {}, g.getPath("A", "D").toArray());
+    }
+
+    @Test
+    public void testGetPathBetweenNonExistentVertices() {
+        assertSame(null, g.getPath("A", "B"));
+    }
+
+    @Test
+    public void testGetPathBetweenSameVertex() {
+        g.addVertex("A");
+        assertSame(null, g.getPath("A", "A"));
     }
 }

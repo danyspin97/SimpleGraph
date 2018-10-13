@@ -8,9 +8,13 @@ import org.simplegraph.*;
 public abstract class TestUndirectedGraph extends TestEdgesGraph {
     // The graph is undirected, so a,b is the same as b,a
     @Test
+    public void testExistsOppositeEdge() {
+        g.addEdge("A", "B");
+        assertTrue(g.existsEdge("B", "A"));
+    }
+
+    @Test
     public void testAddOppositeEdge() {
-        g.addVertex("E");
-        g.addVertex("F");
         g.addEdge("E", "F");
         int edgesCount = g.countEdges();
         g.addEdge("F", "E");
