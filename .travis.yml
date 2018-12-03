@@ -2,9 +2,5 @@ language: java
 sudo: false
 script: mvn clean verify
 jdk:
-  - oraclejdk8
   - oraclejdk11
-  - openjdk8
-  - openjdk9
-  - openjdk10
   - openjdk11
