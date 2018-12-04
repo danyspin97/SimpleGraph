@@ -174,4 +174,10 @@ public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
         g.addVertex("A");
         assertSame(null, g.getPath("A", "A"));
     }
+
+    @Test
+    public void testUpdateEdge() {
+        g.addEdge("A", "B", sw);
+        assertFalse(g.addEdge("A", "B", sw));
+    }
 }
