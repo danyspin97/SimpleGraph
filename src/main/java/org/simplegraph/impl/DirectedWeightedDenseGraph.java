@@ -10,8 +10,6 @@ import org.simplegraph.impl.base.BaseDirectedDenseGraph;
  * Undirected graph implemention for dense graphs.
  */
 public class DirectedWeightedDenseGraph<V, E> extends BaseDirectedDenseGraph<V, E> implements DirectedWeightedGraph<V, E> {
-    protected ArrayList<E> edges;
-
     public DirectedWeightedDenseGraph() {
         initialize(DEFAULT_SIZE);
     }
@@ -49,12 +47,11 @@ public class DirectedWeightedDenseGraph<V, E> extends BaseDirectedDenseGraph<V, 
     }
 
     public boolean isSource(V vertex, E edge) {
-        // TODO
-        return false;
+        return checkEdge(vertex, edge, true);
     }
+
     public boolean isDestination(V vertex, E edge) {
-        // TODO
-        return false;
+        return checkEdge(vertex, edge, false);
     }
 
     public DirectedWeightedGraph<V, E> getSpanningTree() {

@@ -2,6 +2,7 @@ package org.simplegraph.impl.base;
 
 import java.util.Arrays;
 import java.util.ArrayDeque;
+import java.util.function.Supplier;
 import java.util.LinkedList;
 
 import org.simplegraph.DirectedGraph;
@@ -239,6 +240,30 @@ public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         }
 
         return count;
+    }
+
+    protected boolean checkEdge(V vertex, E edge, boolean in) {
+        // Edge must not be null
+        if (edge == null) {
+            return false;
+        }
+
+        int i = getVertexIndex(vertex);
+        // The vertex should be contained in the graph
+        if (i == -1) {
+            return false;
+        }
+        int j = 0;
+
+        for (j = 0; j != verticesCount; j++) {
+            if (in && edge.equals(edges[i][j])) {
+                return true;
+            } else if (!in && edge.equals(edges[j][i])) {
+                return true;
+            }
+        }
+
+        return false;
     }
 
     /**
