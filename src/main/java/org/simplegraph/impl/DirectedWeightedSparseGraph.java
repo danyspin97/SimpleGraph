@@ -63,7 +63,7 @@ public class DirectedWeightedSparseGraph<V, E> extends BaseDirectedSparseGraph<V
         }
 
         for (Map.Entry<V, E> e : edges.get(vertex).entrySet()) {
-            if (e.getValue().equals(e)) {
+            if (e.getValue().equals(edge)) {
                 return true;
             }
         }
