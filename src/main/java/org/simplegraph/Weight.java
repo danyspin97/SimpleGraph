@@ -1,7 +1,7 @@
 package org.simplegraph;
 
 public interface Weight<T> {
-    public boolean isInf();
+    boolean isInf();
 
-    public T getWeight();
+    T getWeight();
 }
