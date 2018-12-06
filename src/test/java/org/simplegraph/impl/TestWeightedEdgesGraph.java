@@ -46,17 +46,26 @@ public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
     }
 
     @Test
-    public void testAddEdgesBetweenSameVertexNotContained() {
+    public void testAddEdgesBetweenSameVertex() {
         assertFalse(g.addEdge("A", "A", sw));
+    }
+
+    @Test
+    public void testAddEdgesBetweenSameVertexNotContained() {
+        g.addEdge("A", "A", sw);
         assertFalse(g.containsVertex("A"));
     }
 
     @Test
+    public void testCountEdgesEmptyGraph() {
+        assertEquals(0, g.countEdges());
+    }
+
+    @Test
     public void testCountEdges() {
-        int edgesCount = g.countEdges();
         g.addEdge("C", "D", sw);
         g.addEdge("E", "F", sw);
-        assertEquals(edgesCount + 2, g.countEdges());
+        assertEquals(2, g.countEdges());
     }
 
     @Test
@@ -179,5 +188,11 @@ public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
     public void testUpdateEdge() {
         g.addEdge("A", "B", sw);
         assertFalse(g.addEdge("A", "B", sw));
+    }
+
+    @Test
+    public void testGetEdge() {
+        g.addEdge("A", "B", sw);
+        assertEquals(sw, g.getEdge("A", "B"));
     }
 }
