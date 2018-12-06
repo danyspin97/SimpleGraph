@@ -5,6 +5,8 @@ import java.util.LinkedList;
 public interface WeightedGraph<V, E> extends GraphVertices<V> {
     public boolean addEdge(V v1, V v2, E edge);
 
+    public E getEdge(V v1, V v2);
+
     public LinkedList<E> getEdges();
 
     public int countEdges();
