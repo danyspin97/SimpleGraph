@@ -32,7 +32,17 @@ public class UndirectedWeightedSparseGraph<V, E> extends BaseSparseGraph<V, E> i
      * @return      true if the graph has been modified
      */
     public boolean addEdge(V v1, V v2, E edge) {
-        return _addEdge(v1, v2, edge) || _addEdge(v1, v2, edge);
+        return _addEdge(v1, v2, edge) || _addEdge(v2, v1, edge);
+    }
+
+    /**
+     * Get the edge between two vertices
+     * @param  v1   first vertex
+     * @param  v2   second vertex
+     * @return      the edge between v1 and v2, if it exists, null otherwise
+     */
+    public E getEdge(V v1, V v2) {
+        return _getEdge(v1, v2);
     }
 
     /**

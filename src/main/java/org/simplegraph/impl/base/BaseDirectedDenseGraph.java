@@ -7,7 +7,7 @@ import java.util.LinkedList;
 
 import org.simplegraph.DirectedGraph;
 
-public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
+public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
     protected E[][] edges;
 
     /**
@@ -117,12 +117,12 @@ public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         int i1 = getVertexIndex(v1);
         int i2 = getVertexIndex(v2);
 
-        if (i1 == -1) {
-            // the first is not contained but it's the same as the second
-            if (v1.equals(v2)) {
-                return false;
-            }
+        // the vertices cannot be the same
+        if (v1.equals(v2)) {
+            return false;
+        }
 
+        if (i1 == -1) {
             addVertex(v1);
             // get the index of the newly added vertex
             i1 = getVertexIndex(v1);
@@ -133,14 +133,26 @@ public class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
             i2 = getVertexIndex(v2);
         }
 
-        if (i1 == i2) {
-            return false;
-        }
-
         // get last value to check if the graph has been modified
         E t = edges[i1][i2];
         edges[i1][i2] = edge;
         return t == null || !edge.equals(t);
+    }
+
+    protected E _getEdge(V v1, V v2) {
+        // Null is not a valid value
+        if (v1 == null || v2 == null) {
+            return null;
+        }
+
+        int i1 = getVertexIndex(v1);
+        int i2 = getVertexIndex(v2);
+
+        if (i1 == -1 || i2 == -1) {
+            return null;
+        }
+
+        return edges[i1][i2];
     }
 
     /**

@@ -37,6 +37,16 @@ public class DirectedWeightedSparseGraph<V, E> extends BaseDirectedSparseGraph<V
     }
 
     /**
+     * Get the edge that goes from the first vertex to the second.
+     * @param  v1   first vertex
+     * @param  v2   second vertex
+     * @return      the edge from v1 to v2, if it exists, null otherwise
+     */
+    public E getEdge(V v1, V v2) {
+        return _getEdge(v1, v2);
+    }
+
+    /**
      * Get all the edges in the graph.
      * If an edge appears n times, there will be n copy of the edge in the list.
      * @return LinkedList of the edges

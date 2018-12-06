@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-public class BaseDenseGraph<V> {
+public abstract class BaseDenseGraph<V> {
     protected static final short DEFAULT_SIZE = 15;
     protected int size;
     protected int verticesCount;

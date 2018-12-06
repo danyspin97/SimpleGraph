@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.LinkedList;
 import org.simplegraph.Summable;
 
-public class BaseDirectedSparseGraph<V, E> extends BaseSparseGraph<V, E> {
+public abstract class BaseDirectedSparseGraph<V, E> extends BaseSparseGraph<V, E> {
     /**
      * Default constructor
      */

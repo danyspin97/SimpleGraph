@@ -46,6 +46,16 @@ public class UndirectedWeightedDenseGraph<V, E> extends BaseUndirectedDenseGraph
     }
 
     /**
+     * Get the edge between two vertices
+     * @param  v1   first vertex
+     * @param  v2   second vertex
+     * @return      the edge between v1 and v2, if it exists, null otherwise
+     */
+    public E getEdge(V v1, V v2) {
+        return _getEdge(v1, v2);
+    }
+
+    /**
      * Get a list with the edges contained in the graph.
      * @return LinkedList of the edges
      */

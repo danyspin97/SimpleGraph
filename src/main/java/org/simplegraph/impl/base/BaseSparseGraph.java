@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import org.simplegraph.Summable;
 
-public class BaseSparseGraph<V, E> {
+public abstract class BaseSparseGraph<V, E> {
     protected static final int DEFAULT_SIZE = 15;
     protected HashMap<V, HashMap<V, E>> edges;
 
@@ -69,18 +69,9 @@ public class BaseSparseGraph<V, E> {
             return false;
         }
 
-        // Add the two nodes to the graph if they don't exists
-        if (!containsVertex(v1)) {
-            // But fail if they are the same
-            if (v1.equals(v2)) {
-                return false;
-            }
-
-            addVertex(v1);
-        }
-
-        if (!containsVertex(v2)) {
-            addVertex(v2);
+        // But fail if they are the same
+        if (v1.equals(v2)) {
+            return false;
         }
 
         // If the are already connected
@@ -88,9 +79,32 @@ public class BaseSparseGraph<V, E> {
             return false;
         }
 
+        // If the edge is the same of the one in the graph between v1 and v2
+        if (edge.equals(_getEdge(v1, v2))) {
+            return false;
+        }
+
+        // It's safe to add the edge
+        // Add the two nodes to the graph if they don't exists
+        if (!containsVertex(v1)) {
+            addVertex(v1);
+        }
+
+        if (!containsVertex(v2)) {
+            addVertex(v2);
+        }
+
         edges.get(v1).put(v2, edge);
 
         return true;
+    }
+
+    protected E _getEdge(V v1, V v2) {
+        if (!containsVertex(v1) || !containsVertex(v2)) {
+            return null;
+        }
+
+        return edges.get(v1).get(v2);
     }
 
     /**

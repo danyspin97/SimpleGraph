@@ -6,7 +6,7 @@ import java.util.ArrayDeque;
 import java.util.LinkedList;
 import org.simplegraph.Graph;
 
-public class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
+public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
     protected ArrayList<E> edges;
 
     public BaseUndirectedDenseGraph() {
@@ -137,6 +137,10 @@ public class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         addVertex(v2);
         // edge is not null, hence we can call a method on it
         return !edge.equals(edges.set(getEdgeIndex(v1, v2), edge));
+    }
+
+    protected E _getEdge(V v1, V v2) {
+        return edges.get(getEdgeIndex(v1, v2));
     }
 
     /**

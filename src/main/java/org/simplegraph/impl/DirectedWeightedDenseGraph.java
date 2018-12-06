@@ -37,6 +37,16 @@ public class DirectedWeightedDenseGraph<V, E> extends BaseDirectedDenseGraph<V, 
     }
 
     /**
+     * Get the edge that goes from the first vertex to the second.
+     * @param  v1   first vertex
+     * @param  v2   second vertex
+     * @return      the edge from v1 to v2, if it exists, null otherwise
+     */
+    public E getEdge(V v1, V v2) {
+        return _getEdge(v1, v2);
+    }
+
+    /**
      * Get a list with the edges contained in the graph.
      * @return LinkedList of the edges
      */
