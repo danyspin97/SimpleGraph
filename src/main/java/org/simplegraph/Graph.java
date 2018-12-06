@@ -1,6 +1,6 @@
 package org.simplegraph;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public interface Graph<V> extends GraphVertices<V> {
     boolean addEdge(V v1, V v2);

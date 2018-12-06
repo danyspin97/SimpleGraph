@@ -1,6 +1,6 @@
 package org.simplegraph;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public interface GraphVertices<V> {
     boolean addVertex(V vertex);
@@ -13,15 +13,15 @@ public interface GraphVertices<V> {
 
     boolean existsEdge(V v1, V v2);
 
-    LinkedList<V> getVertices();
+    List<V> getVertices();
 
     int countVertices();
 
-    LinkedList<V> getNeighbors(V vertex);
+    List<V> getNeighbors(V vertex);
 
     int countNeighbors(V vertex);
 
-    LinkedList<V> getPath(V source, V destination);
+    List<V> getPath(V source, V destination);
 
     boolean existsPath(V source, V destination);
 }

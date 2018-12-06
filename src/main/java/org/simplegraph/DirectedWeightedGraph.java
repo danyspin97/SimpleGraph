@@ -1,6 +1,6 @@
 package org.simplegraph;
 
-import java.util.LinkedList;
+import java.util.List;
 
 public interface DirectedWeightedGraph<V, E> extends WeightedGraph<V, E> {
     boolean isSource(V vertex, E edge);
@@ -11,9 +11,9 @@ public interface DirectedWeightedGraph<V, E> extends WeightedGraph<V, E> {
 
     int getOutDegree(V vertex);
 
-    LinkedList<V> getInVertices(V vertex);
+    List<V> getInVertices(V vertex);
 
-    LinkedList<V> getOutVertices(V vertex);
+    List<V> getOutVertices(V vertex);
 
     DirectedWeightedGraph<V, E> getMinimumSpanningTree();
 }
