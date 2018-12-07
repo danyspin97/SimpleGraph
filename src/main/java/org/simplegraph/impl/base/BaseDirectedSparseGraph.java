@@ -1,5 +1,6 @@
 package org.simplegraph.impl.base;
 
+import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.LinkedList;
@@ -34,15 +35,15 @@ public abstract class BaseDirectedSparseGraph<V, E> extends BaseSparseGraph<V, E
     /**
      * Get the neighbors of a vertex, both incident and outer vertices.
      * @param  vertex the specified vertex
-     * @return        the collection of vertices that are neighbors of vertex
+     * @return        the list of vertices that are neighbors of vertex
      *                null if the vertex is not contained in the graph
      */
-    public LinkedList<V> getNeighbors(V vertex) {
+    public List<V> getNeighbors(V vertex) {
         if (!containsVertex(vertex)) {
             return null;
         }
 
-        LinkedList<V> neighbors = getOutVertices(vertex);
+        List<V> neighbors = getOutVertices(vertex);
 
         // Do not add duplicated element
         for (V v : getInVertices(vertex)) {
@@ -65,10 +66,10 @@ public abstract class BaseDirectedSparseGraph<V, E> extends BaseSparseGraph<V, E
     /**
      * Get the incident vertices of a vertex.
      * @param  vertex the specified vertex
-     * @return        a LinkedList containing the incident vertices of vertex,
+     * @return        a list containing the incident vertices of vertex,
      *                null if vertex is not contained in the graph
      */
-    public LinkedList<V> getInVertices(V vertex) {
+    public List<V> getInVertices(V vertex) {
         if (!containsVertex(vertex)) {
             return null;
         }
@@ -88,10 +89,10 @@ public abstract class BaseDirectedSparseGraph<V, E> extends BaseSparseGraph<V, E
     /**
      * Get the outer vertices of a vertex.
      * @param  vertex the specified vertex
-     * @return        a LinkedList containing the outer vertices of vertex,
+     * @return        a list containing the outer vertices of vertex,
      *                null if vertex is not contained in the graph
      */
-    public LinkedList<V> getOutVertices(V vertex) {
+    public List<V> getOutVertices(V vertex) {
         return super.getNeighbors(vertex);
     }
 

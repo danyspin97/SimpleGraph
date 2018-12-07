@@ -1,6 +1,7 @@
 package org.simplegraph.impl.base;
 
 import java.util.ArrayDeque;
+import java.util.List;
 import java.util.HashMap;
 import java.util.LinkedList;
 import org.simplegraph.Summable;
@@ -160,10 +161,10 @@ public abstract class BaseSparseGraph<V, E> {
     /**
      * Get the neighbors of a vertex
      * @param  vertex the specified vertex
-     * @return        the collection of vertices that are neighbors of vertex
+     * @return        the list of vertices that are neighbors of vertex
      *                null if the vertex is not contained in the graph
      */
-    public LinkedList<V> getNeighbors(V vertex) {
+    public List<V> getNeighbors(V vertex) {
         if (!containsVertex(vertex)) {
             return null;
         }
@@ -186,9 +187,9 @@ public abstract class BaseSparseGraph<V, E> {
 
     /**
      * Get all the vertices in the graph
-     * @return a LinkedList containing all the graph vertices
+     * @return a list containing all the graph vertices
      */
-    public LinkedList<V> getVertices() {
+    public List<V> getVertices() {
         return new LinkedList<V>(edges.keySet());
     }
 
@@ -196,13 +197,13 @@ public abstract class BaseSparseGraph<V, E> {
      * Get a path between a source and a destination
      * @param source      source vertex
      * @param destination destination vertex
-     * @return            LinkedList containing the vertices that
+     * @return            a list containing the vertices that
      *                    compose the path, in order; an empty LinkedList if
      *                    there is no path, null if the source and the
      *                    destination are equals or are not contained in the
      *                    graph
      */
-    public LinkedList<V> getPath(V source, V destination) {
+    public List<V> getPath(V source, V destination) {
         if (!edges.containsKey(source) || !edges.containsKey(destination)) {
             return null;
         }
@@ -253,7 +254,7 @@ public abstract class BaseSparseGraph<V, E> {
      * @return            true if a path exists
      */
     public boolean existsPath(V source, V destination) {
-        LinkedList<V> path = getPath(source, destination);
+        List<V> path = getPath(source, destination);
         if (path == null) {
             return false;
         }

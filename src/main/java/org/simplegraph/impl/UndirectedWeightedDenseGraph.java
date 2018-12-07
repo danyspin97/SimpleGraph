@@ -1,14 +1,8 @@
 package org.simplegraph.impl;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
 import java.util.LinkedList;
-import java.util.HashMap;
-import java.util.Random;
-import java.util.function.UnaryOperator;
+import java.util.List;
 
 import org.simplegraph.WeightedGraph;
 import org.simplegraph.impl.base.BaseUndirectedDenseGraph;
@@ -57,10 +51,10 @@ public class UndirectedWeightedDenseGraph<V, E> extends BaseUndirectedDenseGraph
 
     /**
      * Get a list with the edges contained in the graph.
-     * @return LinkedList of the edges
+     * @return List of the edges
      */
     @SuppressWarnings("unchecked")
-    public LinkedList<E> getEdges() {
+    public List<E> getEdges() {
         return (LinkedList<E>) edges.clone();
     }
 

@@ -1,6 +1,7 @@
 package org.simplegraph.impl;
 
 import java.util.LinkedList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
@@ -147,7 +148,7 @@ public abstract class TestEdgesGraph extends TestVerticesGraph {
     public void testGetPath() {
         g.addEdge("A", "B");
         g.addEdge("B", "C");
-        LinkedList<String>  path = g.getPath("A", "C");
+        List<String>  path = g.getPath("A", "C");
         assertArrayEquals(new String[] { "A", "B", "C" }, path.toArray());
     }
 

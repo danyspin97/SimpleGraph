@@ -3,6 +3,7 @@ package org.simplegraph.impl.base;
 import java.util.Arrays;
 import java.util.ArrayList;
 import java.util.ArrayDeque;
+import java.util.List;
 import java.util.LinkedList;
 import org.simplegraph.Graph;
 
@@ -191,10 +192,10 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
     /**
      * Get the neighbors of a vertex, both incident and outer vertices.
      * @param  vertex the specified vertex
-     * @return        the collection of vertices that are neighbors of vertex
+     * @return        the list of vertices that are neighbors of vertex
      *                null if the vertex is not contained in the graph
      */
-    public LinkedList<V> getNeighbors(V vertex)
+    public List<V> getNeighbors(V vertex)
     {
         if (!containsVertex(vertex)) {
             return null;
@@ -287,13 +288,13 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * Get a path between a source and a destination
      * @param source      source vertex
      * @param destination destination vertex
-     * @return            a LinkedList containing the vertices that
-     *                    compose the path, in order; an empty LinkedList if
+     * @return            a list containing the vertices that
+     *                    compose the path, in order; an empty list if
      *                    there is no path, null if the source and the
      *                    destination are equals or are not contained in the
      *                    graph
      */
-    public LinkedList<V> getPath(V source, V destination) {
+    public List<V> getPath(V source, V destination) {
         int i1, i2;
 
         if ((i1 = getVertexIndex(source)) == -1 || (i2 = getVertexIndex(destination)) == -1) {
@@ -368,7 +369,7 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * @return            true if a path exists
      */
     public boolean existsPath(V source, V destination) {
-        LinkedList<V> path = getPath(source, destination);
+        List<V> path = getPath(source, destination);
         if (path == null) {
             return false;
         }

@@ -1,9 +1,5 @@
 package org.simplegraph.impl;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.LinkedList;
-
 import org.simplegraph.Graph;
 import org.simplegraph.impl.base.BaseSparseGraph;
 

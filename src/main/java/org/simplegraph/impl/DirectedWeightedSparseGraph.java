@@ -4,6 +4,7 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.simplegraph.DirectedWeightedGraph;
 import org.simplegraph.impl.base.BaseDirectedSparseGraph;
@@ -49,9 +50,9 @@ public class DirectedWeightedSparseGraph<V, E> extends BaseDirectedSparseGraph<V
     /**
      * Get all the edges in the graph.
      * If an edge appears n times, there will be n copy of the edge in the list.
-     * @return LinkedList of the edges
+     * @return list of the edges
      */
-    public LinkedList<E> getEdges() {
+    public List<E> getEdges() {
         LinkedList<E> t = new LinkedList<E>();
 
         for (HashMap<V, E> h : edges.values()) {
@@ -114,7 +115,7 @@ public class DirectedWeightedSparseGraph<V, E> extends BaseDirectedSparseGraph<V
         return null;
     }
 
-    public LinkedList<V> getShortestPath(V source, V destination) {
+    public List<V> getShortestPath(V source, V destination) {
         return null;
     }
 }

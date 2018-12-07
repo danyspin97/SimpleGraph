@@ -1,14 +1,6 @@
 package org.simplegraph.impl;
 
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.HashMap;
-import java.util.Random;
-import java.util.function.UnaryOperator;
 
 import org.simplegraph.Graph;
 import org.simplegraph.impl.base.BaseUndirectedDenseGraph;
@@ -29,7 +21,7 @@ public class UndirectedDenseGraph<V> extends BaseUndirectedDenseGraph<V, Boolean
 
     public UndirectedDenseGraph(UndirectedDenseGraph<V> graph) {
         // TODO
-        // super(graph);
+        super(graph);
     }
 
     /**

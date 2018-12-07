@@ -2,7 +2,7 @@ package org.simplegraph.impl.base;
 
 import java.util.Arrays;
 import java.util.ArrayDeque;
-import java.util.function.Supplier;
+import java.util.List;
 import java.util.LinkedList;
 
 import org.simplegraph.DirectedGraph;
@@ -203,10 +203,10 @@ public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
     /**
      * Get the neighbors of a vertex, both incident and outer vertices.
      * @param  vertex the specified vertex
-     * @return        the collection of vertices that are neighbors of vertex
+     * @return        the list of vertices that are neighbors of vertex
      *                null if the vertex is not contained in the graph
      */
-    public LinkedList<V> getNeighbors(V vertex) {
+    public List<V> getNeighbors(V vertex) {
         if (!containsVertex(vertex)) {
             return null;
         }
@@ -284,7 +284,7 @@ public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * @return        a LinkedList containing the incident vertices of vertex,
      *                null if vertex is not contained in the graph
      */
-    public LinkedList<V> getInVertices(V vertex) {
+    public List<V> getInVertices(V vertex) {
         if (!containsVertex(vertex)) {
             return null;
         }
@@ -304,10 +304,10 @@ public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
     /**
      * Get the outer vertices of a vertex.
      * @param  vertex the specified vertex
-     * @return        a LinkedList containing the outer vertices of vertex,
+     * @return        a list containing the outer vertices of vertex,
      *                null if vertex is not contained in the graph
      */
-    public LinkedList<V> getOutVertices(V vertex) {
+    public List<V> getOutVertices(V vertex) {
         if (!containsVertex(vertex)) {
             return null;
         }
@@ -336,7 +336,7 @@ public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      *                is not contained in the graph
      */
     public int getInDegree(V vertex) {
-        LinkedList<V> list = getInVertices(vertex);
+        List<V> list = getInVertices(vertex);
 
         if (list != null) {
             return list.size();
@@ -352,7 +352,7 @@ public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      *                is not contained in the graph
      */
     public int getOutDegree(V vertex) {
-        LinkedList<V> list = getOutVertices(vertex);
+        List<V> list = getOutVertices(vertex);
 
         if (list != null) {
             return list.size();
@@ -368,7 +368,7 @@ public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * @return            true if a path exists
      */
     public boolean existsPath(V source, V destination) {
-        LinkedList<V> path = getPath(source, destination);
+        List<V> path = getPath(source, destination);
         if (path == null) {
             return false;
         }
@@ -380,13 +380,13 @@ public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * Get a path between a source and a destination
      * @param  source      The vertex from where the path shall begin
      * @param  destination The vertex from where the path shall end
-     * @return             Ordered LinkedList of the vertices that form a path
+     * @return             Ordered list of the vertices that form a path
      *                     between source and destination, null if source
      *                     and destination are the same or if they are not
      *                     contained in the graph, an empty LinkedList if
      *                     there is no path between them
      */
-    public LinkedList<V> getPath(V source, V destination) {
+    public List<V> getPath(V source, V destination) {
         int i1, i2;
 
         if ((i1 = getVertexIndex(source)) == -1 || (i2 = getVertexIndex(destination)) == -1) {

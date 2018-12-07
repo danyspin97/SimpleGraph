@@ -1,9 +1,9 @@
 package org.simplegraph.impl;
 
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.Map;
 import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 import org.simplegraph.DirectedGraph;
 import org.simplegraph.impl.base.BaseDirectedSparseGraph;
@@ -41,12 +41,12 @@ public class DirectedSparseGraph<V> extends BaseDirectedSparseGraph<V, Boolean> 
      * @return        the collection of vertices that are neighbors of vertex
      *                null if the vertex is not contained in the graph
      */
-    public LinkedList<V> getNeighbors(V vertex) {
+    public List<V> getNeighbors(V vertex) {
         if (!containsVertex(vertex)) {
             return null;
         }
 
-        LinkedList<V> neighbors = getOutVertices(vertex);
+        List<V> neighbors = getOutVertices(vertex);
 
         // Do not add duplicated element
         for (V v : getInVertices(vertex)) {
@@ -61,10 +61,10 @@ public class DirectedSparseGraph<V> extends BaseDirectedSparseGraph<V, Boolean> 
     /**
      * Get the incident vertices of a vertex.
      * @param  vertex the specified vertex
-     * @return        a LinkedList containing the incident vertices of vertex,
+     * @return        a list containing the incident vertices of vertex,
      *                null if vertex is not contained in the graph
      */
-    public LinkedList<V> getInVertices(V vertex) {
+    public List<V> getInVertices(V vertex) {
         if (!containsVertex(vertex)) {
             return null;
         }
@@ -84,10 +84,10 @@ public class DirectedSparseGraph<V> extends BaseDirectedSparseGraph<V, Boolean> 
     /**
      * Get the outer vertices of a vertex.
      * @param  vertex the specified vertex
-     * @return        a LinkedList containing the outer vertices of vertex,
+     * @return        a list containing the outer vertices of vertex,
      *                null if vertex is not contained in the graph
      */
-    public LinkedList<V> getOutVertices(V vertex) {
+    public List<V> getOutVertices(V vertex) {
         if (!containsVertex(vertex)) {
             return null;
         }

@@ -18,7 +18,7 @@ public class SimpleWeight implements Weight<Double>, Summable<Double> {
         return weight;
     }
 
-    public void setWeight(double d) {
+    public void setWeight(Double d) {
         weight = d;
     }
 

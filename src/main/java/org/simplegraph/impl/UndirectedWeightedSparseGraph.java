@@ -1,8 +1,8 @@
 package org.simplegraph.impl;
 
-import java.util.Collection;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.simplegraph.WeightedGraph;
 import org.simplegraph.impl.base.BaseSparseGraph;
@@ -48,9 +48,9 @@ public class UndirectedWeightedSparseGraph<V, E> extends BaseSparseGraph<V, E> i
     /**
      * Get all the edges in the graph.
      * Each edge will be added only one time, even if it appears many times
-     * @return LinkedList of the edges
+     * @return list of the edges
      */
-    public LinkedList<E> getEdges() {
+    public List<E> getEdges() {
         LinkedList<E> t = new LinkedList<E>();
 
         for (HashMap<V, E> h : edges.values()) {
@@ -64,7 +64,7 @@ public class UndirectedWeightedSparseGraph<V, E> extends BaseSparseGraph<V, E> i
         return t;
     }
 
-    public LinkedList<V> getShortestPath(V source, V destination) {
+    public List<V> getShortestPath(V source, V destination) {
         return null;
     }
 

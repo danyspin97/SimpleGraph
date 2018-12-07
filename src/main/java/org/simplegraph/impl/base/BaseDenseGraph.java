@@ -1,7 +1,7 @@
 package org.simplegraph.impl.base;
 
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.List;
 import java.util.HashMap;
 import java.util.LinkedList;
 
@@ -163,9 +163,9 @@ public abstract class BaseDenseGraph<V> {
 
     /**
      * Get all the vertices in the graph
-     * @return a LinkedList containing all the graph vertices
+     * @return a List containing all the graph vertices
      */
-    public LinkedList<V> getVertices() {
+    public List<V> getVertices() {
         return new LinkedList<V>(verticesArray.subList(0, verticesCount));
     }
 }

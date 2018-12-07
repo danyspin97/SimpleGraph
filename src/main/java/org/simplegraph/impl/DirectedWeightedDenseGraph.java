@@ -2,6 +2,7 @@ package org.simplegraph.impl;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 
 import org.simplegraph.DirectedWeightedGraph;
 import org.simplegraph.impl.base.BaseDirectedDenseGraph;
@@ -48,10 +49,10 @@ public class DirectedWeightedDenseGraph<V, E> extends BaseDirectedDenseGraph<V, 
 
     /**
      * Get a list with the edges contained in the graph.
-     * @return LinkedList of the edges
+     * @return list of the edges
      */
     @SuppressWarnings("unchecked")
-    public LinkedList<E> getEdges() {
+    public List<E> getEdges() {
         // TODO
         return null;
     }
@@ -74,7 +75,7 @@ public class DirectedWeightedDenseGraph<V, E> extends BaseDirectedDenseGraph<V, 
         return null;
     }
 
-    public LinkedList<V> getShortestPath(V source, V destination) {
+    public List<V> getShortestPath(V source, V destination) {
         // TODO
         return null;
     }
