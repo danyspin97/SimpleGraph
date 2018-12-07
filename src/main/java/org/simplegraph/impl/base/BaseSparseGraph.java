@@ -7,7 +7,7 @@ import java.util.LinkedList;
 
 public abstract class BaseSparseGraph<V, E> {
     protected static final int DEFAULT_SIZE = 15;
-    protected Map<V, HashMap<V, E>> edges;
+    protected HashMap<V, HashMap<V, E>> edges;
 
     /**
      * Default constructor

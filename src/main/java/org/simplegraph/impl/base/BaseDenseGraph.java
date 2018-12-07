@@ -10,7 +10,7 @@ public abstract class BaseDenseGraph<V> {
     protected static final short DEFAULT_SIZE = 15;
     protected int size;
     protected int verticesCount;
-    protected List<V> verticesArray;
+    protected ArrayList<V> verticesArray;
     protected Map<V, Integer> verticesMap;
 
     protected void initialize(int startSize) {

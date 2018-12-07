@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import org.simplegraph.Graph;
 
 public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
-    protected List<E> edges;
+    protected ArrayList<E> edges;
 
     public BaseUndirectedDenseGraph() {
         initialize(DEFAULT_SIZE);
