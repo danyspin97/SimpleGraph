@@ -4,7 +4,6 @@ import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.LinkedList;
-import org.simplegraph.Summable;
 
 public abstract class BaseDirectedSparseGraph<V, E> extends BaseSparseGraph<V, E> {
     /**

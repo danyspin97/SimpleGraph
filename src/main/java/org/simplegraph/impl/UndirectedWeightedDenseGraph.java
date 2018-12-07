@@ -1,6 +1,5 @@
 package org.simplegraph.impl;
 
-import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -11,8 +10,6 @@ import org.simplegraph.impl.base.BaseUndirectedDenseGraph;
  * Undirected graph implemention for dense graphs.
  */
 public class UndirectedWeightedDenseGraph<V, E> extends BaseUndirectedDenseGraph<V, E> implements WeightedGraph<V, E> {
-    protected ArrayList<E> edges;
-
     public UndirectedWeightedDenseGraph() {
         super();
     }
@@ -24,7 +21,7 @@ public class UndirectedWeightedDenseGraph<V, E> extends BaseUndirectedDenseGraph
 
     public UndirectedWeightedDenseGraph(UndirectedWeightedSparseGraph<V, E> graph) {
         // TODO
-        // super(graph);
+        super(graph);
     }
 
     /**
@@ -68,7 +65,7 @@ public class UndirectedWeightedDenseGraph<V, E> extends BaseUndirectedDenseGraph
         return null;
     }
 
-    public LinkedList<V> getShortestPath(V source, V destination) {
+    public List<V> getShortestPath(V source, V destination) {
         // TODO
         return null;
     }

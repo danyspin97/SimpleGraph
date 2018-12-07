@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import org.simplegraph.Graph;
 
 public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
-    protected ArrayList<E> edges;
+    protected List<E> edges;
 
     public BaseUndirectedDenseGraph() {
         initialize(DEFAULT_SIZE);
@@ -65,7 +65,9 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * @return Number of edges based on the number of vertices.
      */
     protected int getEdgesSize(int verticesSize) {
-        if (verticesSize == 0) return 0;
+        if (verticesSize == 0) {
+            return 0;
+        }
 
         return verticesSize * (verticesSize - 1)  / 2;
     }
@@ -237,8 +239,7 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * @param  vertex the spefied vertex
      * @return        number of neighbors, -1 if vertex does not exists
      */
-    public int countNeighbors(V vertex)
-    {
+    public int countNeighbors(V vertex) {
         if (!containsVertex(vertex)) {
             return -1;
         }
@@ -271,8 +272,7 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * Get the number of edges in the graph.
      * @return number of edges
      */
-    public int countEdges()
-    {
+    public int countEdges() {
         int count = 0;
         int lastEdge = verticesCount * (verticesCount - 1) / 2;
 

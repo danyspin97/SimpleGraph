@@ -3,7 +3,7 @@ package org.simplegraph.impl;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import org.simplegraph.*;
+import org.simplegraph.Graph;
 
 public abstract class TestUndirectedGraph extends TestEdgesGraph {
     public void setGraph(Graph<String> g) {

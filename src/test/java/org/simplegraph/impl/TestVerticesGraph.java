@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import org.simplegraph.*;
+import org.simplegraph.GraphVertices;
 
 public abstract class TestVerticesGraph {
     static public GraphVertices<String> g;

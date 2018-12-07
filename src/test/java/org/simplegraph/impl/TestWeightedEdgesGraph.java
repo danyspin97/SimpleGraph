@@ -1,13 +1,12 @@
 package org.simplegraph.impl;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import org.simplegraph.*;
-import org.simplegraph.util.*;
+import org.simplegraph.WeightedGraph;
+import org.simplegraph.util.SimpleWeight;
 
 public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
     static public WeightedGraph<String, SimpleWeight> g;

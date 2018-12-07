@@ -1,7 +1,5 @@
 package org.simplegraph.impl;
 
-import java.util.ArrayList;
-
 import org.simplegraph.Graph;
 import org.simplegraph.impl.base.BaseUndirectedDenseGraph;
 
@@ -9,8 +7,6 @@ import org.simplegraph.impl.base.BaseUndirectedDenseGraph;
  * Undirected graph implemention for dense graphs.
  */
 public class UndirectedDenseGraph<V> extends BaseUndirectedDenseGraph<V, Boolean> implements Graph<V> {
-    private ArrayList<Boolean> edges;
-
     public UndirectedDenseGraph() {
         super();
     }

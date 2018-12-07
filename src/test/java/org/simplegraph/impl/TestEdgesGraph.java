@@ -1,12 +1,11 @@
 package org.simplegraph.impl;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import org.simplegraph.*;
+import org.simplegraph.Graph;
 
 public abstract class TestEdgesGraph extends TestVerticesGraph {
     static public Graph<String> g;

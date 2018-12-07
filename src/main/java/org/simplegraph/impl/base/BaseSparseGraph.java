@@ -4,11 +4,10 @@ import java.util.ArrayDeque;
 import java.util.List;
 import java.util.HashMap;
 import java.util.LinkedList;
-import org.simplegraph.Summable;
 
 public abstract class BaseSparseGraph<V, E> {
     protected static final int DEFAULT_SIZE = 15;
-    protected HashMap<V, HashMap<V, E>> edges;
+    protected Map<V, HashMap<V, E>> edges;
 
     /**
      * Default constructor

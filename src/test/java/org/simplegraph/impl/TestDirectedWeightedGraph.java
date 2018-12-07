@@ -3,8 +3,8 @@ package org.simplegraph.impl;
 import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
-import org.simplegraph.*;
-import org.simplegraph.util.*;
+import org.simplegraph.DirectedWeightedGraph;
+import org.simplegraph.util.SimpleWeight;
 
 public abstract class TestDirectedWeightedGraph extends TestWeightedEdgesGraph {
     public DirectedWeightedGraph<String, SimpleWeight> g;

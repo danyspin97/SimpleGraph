@@ -1,7 +1,5 @@
 package org.simplegraph.impl;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.simplegraph.DirectedWeightedGraph;

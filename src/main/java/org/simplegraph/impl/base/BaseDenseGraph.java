@@ -3,14 +3,15 @@ package org.simplegraph.impl.base;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.LinkedList;
 
 public abstract class BaseDenseGraph<V> {
     protected static final short DEFAULT_SIZE = 15;
     protected int size;
     protected int verticesCount;
-    protected ArrayList<V> verticesArray;
-    protected HashMap<V, Integer> verticesMap;
+    protected List<V> verticesArray;
+    protected Map<V, Integer> verticesMap;
 
     protected void initialize(int startSize) {
         size = startSize;
@@ -71,7 +72,9 @@ public abstract class BaseDenseGraph<V> {
      */
     protected int getVertexIndex(V vertex) {
         // null is not a valid vertex
-        if (vertex == null) return -1;
+        if (vertex == null) {
+            return -1;
+        }
 
         return verticesMap.getOrDefault(vertex, -1);
     }
