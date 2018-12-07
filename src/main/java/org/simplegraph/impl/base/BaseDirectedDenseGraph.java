@@ -108,7 +108,7 @@ public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * @param  edge edge to add
      * @return      true if the graph has been modified
      */
-    public boolean _addEdge(V v1, V v2, E edge) {
+    public boolean addSingleEdge(V v1, V v2, E edge) {
         // Null is not a valid value
         if (v1 == null || v2 == null || edge == null) {
             return false;

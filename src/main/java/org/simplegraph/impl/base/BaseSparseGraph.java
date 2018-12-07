@@ -63,7 +63,7 @@ public abstract class BaseSparseGraph<V, E> {
         return edges.size();
     }
 
-    protected boolean _addEdge(V v1, V v2, E edge) {
+    protected boolean addSingleEdge(V v1, V v2, E edge) {
         // null is not a valid vertex
         if (v1 == null || v2 == null || edge == null) {
             return false;

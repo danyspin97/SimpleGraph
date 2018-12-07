@@ -32,7 +32,7 @@ public class DirectedSparseGraph<V> extends BaseDirectedSparseGraph<V, Boolean> 
      * @return      true if the graph has been modified
      */
     public boolean addEdge(V v1, V v2) {
-        return _addEdge(v1, v2, true);
+        return addSingleEdge(v1, v2, true);
     }
 
     /**

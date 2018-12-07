@@ -126,7 +126,7 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         return true;
     }
 
-    protected boolean _addEdge(V v1, V v2, E edge) {
+    protected boolean addSingleEdge(V v1, V v2, E edge) {
         // null is not a valid vertex nor a valid edge
         if (v1 == null || v2 == null || edge == null) {
             return false;

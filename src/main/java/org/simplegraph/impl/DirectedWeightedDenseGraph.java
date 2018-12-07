@@ -32,7 +32,7 @@ public class DirectedWeightedDenseGraph<V, E> extends BaseDirectedDenseGraph<V, 
      * @return      true if the graph has been modified
      */
     public boolean addEdge(V v1, V v2, E edge) {
-        return _addEdge(v1, v2, edge);
+        return addSingleEdge(v1, v2, edge);
     }
 
     /**

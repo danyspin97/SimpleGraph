@@ -27,8 +27,8 @@ public class UndirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implem
      * @return    true if the graph has been modified
      */
     public boolean addEdge(V v1, V v2) {
-        boolean a = _addEdge(v1, v2, true);
-        boolean b = _addEdge(v2, v1, true);
+        boolean a = addSingleEdge(v1, v2, true);
+        boolean b = addSingleEdge(v2, v1, true);
         return a || b;
     }
 
