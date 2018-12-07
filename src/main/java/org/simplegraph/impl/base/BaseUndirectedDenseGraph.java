@@ -18,7 +18,7 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         initialize(size);
     }
 
-    public BaseUndirectedDenseGraph(BaseUndirectedDenseGraph<V, E> graph) {
+    protected void copy(BaseUndirectedDenseGraph<V, E> graph) {
         initialize(graph.size);
         copyVertices(graph);
 

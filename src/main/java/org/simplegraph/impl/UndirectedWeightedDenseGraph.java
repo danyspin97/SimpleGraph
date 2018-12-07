@@ -14,14 +14,12 @@ public class UndirectedWeightedDenseGraph<V, E> extends BaseUndirectedDenseGraph
         super();
     }
 
-    public UndirectedWeightedDenseGraph(int size)
-    {
+    public UndirectedWeightedDenseGraph(int size) {
         super(size);
     }
 
-    public UndirectedWeightedDenseGraph(UndirectedWeightedSparseGraph<V, E> graph) {
-        // TODO
-        super(graph);
+    public UndirectedWeightedDenseGraph(UndirectedWeightedDenseGraph<V, E> graph) {
+        copy(graph);
     }
 
     /**
