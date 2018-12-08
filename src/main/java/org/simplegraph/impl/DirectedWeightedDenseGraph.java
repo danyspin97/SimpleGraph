@@ -1,5 +1,7 @@
 package org.simplegraph.impl;
 
+import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.simplegraph.DirectedWeightedGraph;
@@ -49,10 +51,18 @@ public class DirectedWeightedDenseGraph<V, E> extends BaseDirectedDenseGraph<V, 
      * Get a list with the edges contained in the graph.
      * @return list of the edges
      */
-    @SuppressWarnings("unchecked")
     public List<E> getEdges() {
-        // TODO
-        return null;
+        List<E[]> edgesList =  Arrays.asList(edges);
+        List<E> t = new ArrayList<E>(edges.length * edges.length);
+        for (E[] e: edgesList) {
+            for (int i = 0; i != e.length; i++) {
+                if (e[i] != null) {
+                    t.add(e[i]);
+                }
+            }
+        }
+
+        return t;
     }
 
     public boolean isSource(V vertex, E edge) {
@@ -64,8 +74,7 @@ public class DirectedWeightedDenseGraph<V, E> extends BaseDirectedDenseGraph<V, 
     }
 
     public DirectedWeightedGraph<V, E> getSpanningTree() {
-        // TODO
-        return null;
+        return (DirectedWeightedDenseGraph<V, E>) _getSpanningTree();
     }
 
     public E getMinimumDistance(V source, V destination) {

@@ -440,7 +440,7 @@ public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * Get a spanning tree if it exists.
      * @return Graph containing a spanning tree if it exists, null otherwise.
      */
-    public DirectedGraph<V> _getSpanningTree() {
+    public BaseDirectedDenseGraph<V, E> _getSpanningTree() {
         return null;
     }
 }

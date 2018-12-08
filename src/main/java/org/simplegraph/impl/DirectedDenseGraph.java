@@ -39,6 +39,6 @@ public class DirectedDenseGraph<V> extends BaseDirectedDenseGraph<V, Boolean> im
     }
 
     public DirectedGraph<V> getSpanningTree() {
-        return _getSpanningTree();
+        return (DirectedDenseGraph<V>) _getSpanningTree();
     }
 }
