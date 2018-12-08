@@ -94,7 +94,7 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         if (verticesCount == vertexIndex) {
             int first = getEdgesSize(vertexIndex);
             int last = first + verticesCount;
-            for (int i = first; i != first + verticesCount; i++) {
+            for (int i = first; i != last; i++) {
                 edges.set(i, null);
             }
 
@@ -170,7 +170,7 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
             return -1;
         }
 
-        if (i1 == i2) {
+        if (i1.equals(i2)) {
             return -2;
         }
 
@@ -260,7 +260,8 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         row += vertexIndex;
 
         while (++i != verticesCount) {
-            if (edges.get(row += vertexIndex) != null) {
+            row += vertexIndex;
+            if (edges.get(row) != null) {
                 count++;
             }
         }
@@ -295,9 +296,10 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      *                    graph
      */
     public List<V> getPath(V source, V destination) {
-        int i1, i2;
+        int i1 = getVertexIndex(source);
+        int i2 = getVertexIndex(destination);
 
-        if ((i1 = getVertexIndex(source)) == -1 || (i2 = getVertexIndex(destination)) == -1) {
+        if (i1 == -1 || i2 == -1) {
             return null;
         }
 
@@ -323,7 +325,7 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
             int k = 0;
 
             while (k != current) {
-                if ((edges.get(row + k) != null) && (parent[k] == -1)) {
+                if (edges.get(row + k) != null && parent[k] == -1) {
                     queue.add(k);
                     parent[k] = current;
                 }
@@ -336,7 +338,7 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
             k++;
 
             while (k != verticesCount) {
-                if ((edges.get(row + current) != null) && (parent[k] == -1)) {
+                if (edges.get(row + current) != null && parent[k] == -1) {
                     queue.add(k);
                     parent[k] = current;
                 }
@@ -374,7 +376,7 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
             return false;
         }
 
-        return path.size() != 0;
+        return !path.isEmpty();
     }
 
     public BaseUndirectedDenseGraph<V,E> _getSpanningTree() {

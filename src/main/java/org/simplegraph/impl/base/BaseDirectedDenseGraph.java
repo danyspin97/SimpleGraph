@@ -373,7 +373,7 @@ public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
             return false;
         }
 
-        return path.size() != 0;
+        return !path.isEmpty();
     }
 
     /**
@@ -387,9 +387,10 @@ public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      *                     there is no path between them
      */
     public List<V> getPath(V source, V destination) {
-        int i1, i2;
+        int i1 = getVertexIndex(source);
+        int i2 = getVertexIndex(destination);
 
-        if ((i1 = getVertexIndex(source)) == -1 || (i2 = getVertexIndex(destination)) == -1) {
+        if (i1 == -1 || i2 == -1) {
             return null;
         }
 
@@ -403,7 +404,6 @@ public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         queue.add(i1);
 
         Integer current = -1;
-        int row;
 
         while ((current = queue.pollFirst()) != null) {
 

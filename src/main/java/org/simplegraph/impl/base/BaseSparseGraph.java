@@ -136,7 +136,7 @@ public abstract class BaseSparseGraph<V, E> {
      * @return    true if the graph has been changed
      */
     public boolean removeEdge(V v1, V v2) {
-        return (_removeEdge(v1, v2) || _removeEdge(v2,v1));
+        return _removeEdge(v1, v2) || _removeEdge(v2,v1);
     }
 
     protected int _countEdges() {
@@ -219,7 +219,7 @@ public abstract class BaseSparseGraph<V, E> {
         V current = null;
 
         while ((current = queue.pollFirst()) != null) {
-            if (current == destination) {
+            if (current.equals(destination)) {
                 break;
             }
 
@@ -258,7 +258,7 @@ public abstract class BaseSparseGraph<V, E> {
             return false;
         }
 
-        return path.size() != 0;
+        return !path.isEmpty();
     }
 }
 
