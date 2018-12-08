@@ -80,7 +80,7 @@ public abstract class BaseSparseGraph<V, E> {
         }
 
         // If the edge is the same of the one in the graph between v1 and v2
-        if (edge.equals(_getEdge(v1, v2))) {
+        if (edge.equals(getSingleEdge(v1, v2))) {
             return false;
         }
 
@@ -99,7 +99,7 @@ public abstract class BaseSparseGraph<V, E> {
         return true;
     }
 
-    protected E _getEdge(V v1, V v2) {
+    protected E getSingleEdge(V v1, V v2) {
         if (!containsVertex(v1) || !containsVertex(v2)) {
             return null;
         }

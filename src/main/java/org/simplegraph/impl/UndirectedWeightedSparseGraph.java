@@ -42,7 +42,7 @@ public class UndirectedWeightedSparseGraph<V, E> extends BaseSparseGraph<V, E> i
      * @return      the edge between v1 and v2, if it exists, null otherwise
      */
     public E getEdge(V v1, V v2) {
-        return _getEdge(v1, v2);
+        return getSingleEdge(v1, v2);
     }
 
     /**

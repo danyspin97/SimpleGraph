@@ -139,7 +139,7 @@ public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         return t == null || !edge.equals(t);
     }
 
-    protected E _getEdge(V v1, V v2) {
+    protected E getSingleEdge(V v1, V v2) {
         // Null is not a valid value
         if (v1 == null || v2 == null) {
             return null;

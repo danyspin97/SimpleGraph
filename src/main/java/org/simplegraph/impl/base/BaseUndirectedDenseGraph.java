@@ -142,7 +142,7 @@ public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         return !edge.equals(edges.set(getEdgeIndex(v1, v2), edge));
     }
 
-    protected E _getEdge(V v1, V v2) {
+    protected E getSingleEdge(V v1, V v2) {
         return edges.get(getEdgeIndex(v1, v2));
     }
 
