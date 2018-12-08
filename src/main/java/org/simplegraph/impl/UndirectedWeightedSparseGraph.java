@@ -32,7 +32,9 @@ public class UndirectedWeightedSparseGraph<V, E> extends BaseSparseGraph<V, E> i
      * @return      true if the graph has been modified
      */
     public boolean addEdge(V v1, V v2, E edge) {
-        return addSingleEdge(v1, v2, edge) || addSingleEdge(v2, v1, edge);
+        boolean a = addSingleEdge(v1, v2, edge);
+        boolean b = addSingleEdge(v2, v1, edge);
+        return a || b;
     }
 
     /**
