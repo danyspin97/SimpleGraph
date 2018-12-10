@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.simplegraph.WeightedGraph;
 import org.simplegraph.impl.base.BaseSparseGraph;
+import org.simplegraph.util.Algorithms;
 
 public class UndirectedWeightedSparseGraph<V> extends BaseSparseGraph<V, Double> implements WeightedGraph<V> {
     /**
@@ -48,11 +49,11 @@ public class UndirectedWeightedSparseGraph<V> extends BaseSparseGraph<V, Double>
     }
 
     public List<V> getShortestPath(V source, V destination) {
-        return null;
+        return Algorithms.<V>getShortestPath(this, source, destination);
     }
 
     public Double getMinimumDistance(V source, V destination) {
-        return null;
+        return Algorithms.<V>getMinimumDistance(this, source, destination);
     }
 
     public WeightedGraph<V> getSpanningTree() {

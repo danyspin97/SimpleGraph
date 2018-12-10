@@ -1,10 +1,10 @@
 package org.simplegraph.impl;
 
-import java.util.LinkedList;
 import java.util.List;
 
 import org.simplegraph.WeightedGraph;
 import org.simplegraph.impl.base.BaseUndirectedDenseGraph;
+import org.simplegraph.util.Algorithms;
 
 /**
  * Undirected graph implemention for dense graphs.
@@ -50,13 +50,11 @@ public class UndirectedWeightedDenseGraph<V> extends BaseUndirectedDenseGraph<V,
     }
 
     public Double getMinimumDistance(V source, V destination) {
-        // TODO
-        return null;
+        return Algorithms.<V>getMinimumDistance(this, source, destination);
     }
 
     public List<V> getShortestPath(V source, V destination) {
-        // TODO
-        return null;
+        return Algorithms.<V>getShortestPath(this, source, destination);
     }
 
     public WeightedGraph<V> getMinimumSpanningTree() {

@@ -1,12 +1,10 @@
 package org.simplegraph.impl;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.simplegraph.DirectedWeightedGraph;
 import org.simplegraph.impl.base.BaseDirectedSparseGraph;
+import org.simplegraph.util.Algorithms;
 
 public class DirectedWeightedSparseGraph<V> extends BaseDirectedSparseGraph<V, Double> implements DirectedWeightedGraph<V> {
     /**
@@ -55,11 +53,11 @@ public class DirectedWeightedSparseGraph<V> extends BaseDirectedSparseGraph<V, D
     }
 
     public Double getMinimumDistance(V source, V destination) {
-        return null;
+        return Algorithms.<V>getMinimumDistance(this, source, destination);
     }
 
     public List<V> getShortestPath(V source, V destination) {
-        return null;
+        return Algorithms.<V>getShortestPath(this, source, destination);
     }
 }
 
