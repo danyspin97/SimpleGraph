@@ -193,4 +193,25 @@ public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
         g.addEdge("A", "B", 1.d);
         assertEquals(1.d, (double) g.getWeight("A", "B"));
     }
+
+    @Test
+    public void testGetMinimumPath() {
+        g.addEdge("A", "B", 10.d);
+        g.addEdge("A", "C", 50.d);
+        g.addEdge("B", "D", 10.d);
+        g.addEdge("C", "D", 50.d);
+        List<String>  path = g.getShortestPath("A", "D");
+        assertArrayEquals(new String[] { "A", "B", "D" }, path.toArray());
+    }
+
+    @Test
+    public void testGetMinimumPathNegativeWeight() {
+        g.addEdge("A", "B", 10.d);
+        g.addEdge("A", "C", 50.d);
+        g.addEdge("B", "D", -10.d);
+        g.addEdge("C", "D", -200.d);
+        List<String> path = g.getShortestPath("A", "D");
+        assertEquals(path, null);
+        assertNull(path);
+    }
 }
