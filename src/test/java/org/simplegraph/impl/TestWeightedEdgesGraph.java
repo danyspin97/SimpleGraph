@@ -6,13 +6,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 import org.simplegraph.WeightedGraph;
-import org.simplegraph.util.SimpleWeight;
 
 public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
-    static public WeightedGraph<String, SimpleWeight> g;
-    static public SimpleWeight sw = new SimpleWeight(1);
+    static public WeightedGraph<String> g;
 
-    public void setGraph(WeightedGraph<String, SimpleWeight> g) {
+    public void setGraph(WeightedGraph<String> g) {
         this.g = g;
         super.setGraph(g);
     }
@@ -21,14 +19,14 @@ public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
     public void testAddEdge() {
         g.addVertex("C");
         g.addVertex("D");
-        assertTrue(g.addEdge("C", "D", sw));
+        assertTrue(g.addEdge("C", "D", 1.d));
     }
 
     @Test
     public void testExistsEdge() {
         g.addVertex("C");
         g.addVertex("D");
-        g.addEdge("C", "D", sw);
+        g.addEdge("C", "D", 1.d);
         assertTrue(g.existsEdge("C", "D"));
     }
 
@@ -41,18 +39,18 @@ public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
 
     @Test
     public void testAddEdgeAndVertices() {
-        g.addEdge("A", "B", sw);
+        g.addEdge("A", "B", 1.d);
         assertTrue(g.existsEdge("A", "B"));
     }
 
     @Test
     public void testAddEdgesBetweenSameVertex() {
-        assertFalse(g.addEdge("A", "A", sw));
+        assertFalse(g.addEdge("A", "A", 1.d));
     }
 
     @Test
     public void testAddEdgesBetweenSameVertexNotContained() {
-        g.addEdge("A", "A", sw);
+        g.addEdge("A", "A", 1.d);
         assertFalse(g.containsVertex("A"));
     }
 
@@ -63,14 +61,14 @@ public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
 
     @Test
     public void testCountEdges() {
-        g.addEdge("C", "D", sw);
-        g.addEdge("E", "F", sw);
+        g.addEdge("C", "D", 1.d);
+        g.addEdge("E", "F", 1.d);
         assertEquals(2, g.countEdges());
     }
 
     @Test
     public void testAddEdgeBetweenNullVertices() {
-        assertFalse(g.addEdge(null, null, sw));
+        assertFalse(g.addEdge(null, null, 1.d));
     }
 
     public void testAddNullEdge() {
@@ -84,7 +82,7 @@ public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
         int verticesToAdd = 100;
 
         for (int i = 0; i != verticesToAdd * 4; i++) {
-            g.addEdge(String.valueOf(Math.random() * verticesToAdd), String.valueOf(Math.random() * verticesToAdd), sw);
+            g.addEdge(String.valueOf(Math.random() * verticesToAdd), String.valueOf(Math.random() * verticesToAdd), 1.d);
         }
 
         assertNotSame(edgesCount, g.countEdges());
@@ -99,7 +97,7 @@ public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
         }
 
         for (int i = 0; i != verticesToAdd * 4; i++) {
-            g.addEdge(String.valueOf(Math.random() * verticesToAdd), String.valueOf(Math.random() * Math.random()), sw);
+            g.addEdge(String.valueOf(Math.random() * verticesToAdd), String.valueOf(Math.random() * Math.random()), 1.d);
         }
 
         for (String s : g.getVertices()) {
@@ -116,7 +114,7 @@ public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
     public void testRemoveEdge() {
         g.addVertex("A");
         g.addVertex("B");
-        g.addEdge("A", "B", sw);
+        g.addEdge("A", "B", 1.d);
         assertTrue(g.removeEdge("A", "B"));
     }
 
@@ -128,7 +126,7 @@ public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
         }
 
         for (int i = 0; i != verticesToAdd * 4; i++) {
-            g.addEdge(String.valueOf(Math.random() * verticesToAdd), String.valueOf(Math.random() * Math.random()), sw);
+            g.addEdge(String.valueOf(Math.random() * verticesToAdd), String.valueOf(Math.random() * Math.random()), 1.d);
         }
 
         for (String s : g.getVertices()) {
@@ -140,9 +138,9 @@ public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
 
     @Test
     public void testExistsPath() {
-        g.addEdge("A", "B", sw);
-        g.addEdge("B", "C", sw);
-        g.addEdge("C", "D", sw);
+        g.addEdge("A", "B", 1.d);
+        g.addEdge("B", "C", 1.d);
+        g.addEdge("C", "D", 1.d);
         assertTrue(g.existsPath("A", "D"));
     }
 
@@ -153,23 +151,23 @@ public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
 
     @Test
     public void testExistsPathInNullPath() {
-        g.addEdge("A", "C", sw);
-        g.addEdge("D", "B", sw);
+        g.addEdge("A", "C", 1.d);
+        g.addEdge("D", "B", 1.d);
         assertFalse(g.existsPath("A", "B"));
     }
 
     @Test
     public void testGetPath() {
-        g.addEdge("A", "B", sw);
-        g.addEdge("B", "C", sw);
+        g.addEdge("A", "B", 1.d);
+        g.addEdge("B", "C", 1.d);
         List<String>  path = g.getPath("A", "C");
         assertArrayEquals(new String[] { "A", "B", "C" }, path.toArray());
     }
 
     @Test
     public void testPathDoesNotExists() {
-        g.addEdge("A", "B", sw);
-        g.addEdge("C", "D", sw);
+        g.addEdge("A", "B", 1.d);
+        g.addEdge("C", "D", 1.d);
         assertArrayEquals(new String[] {}, g.getPath("A", "D").toArray());
     }
 
@@ -186,13 +184,13 @@ public abstract class TestWeightedEdgesGraph extends TestVerticesGraph {
 
     @Test
     public void testUpdateEdge() {
-        g.addEdge("A", "B", sw);
-        assertFalse(g.addEdge("A", "B", sw));
+        g.addEdge("A", "B", 1.d);
+        assertFalse(g.addEdge("A", "B", 1.d));
     }
 
     @Test
     public void testGetEdge() {
-        g.addEdge("A", "B", sw);
-        assertEquals(sw, g.getEdge("A", "B"));
+        g.addEdge("A", "B", 1.d);
+        assertEquals(1.d, (double) g.getWeight("A", "B"));
     }
 }
