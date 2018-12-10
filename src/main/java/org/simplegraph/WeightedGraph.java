@@ -2,21 +2,19 @@ package org.simplegraph;
 
 import java.util.List;
 
-public interface WeightedGraph<V, E> extends GraphVertices<V> {
-    boolean addEdge(V v1, V v2, E edge);
+public interface WeightedGraph<V> extends GraphVertices<V> {
+    boolean addEdge(V v1, V v2, Double weight);
 
-    E getEdge(V v1, V v2);
-
-    List<E> getEdges();
+    Double getWeight(V v1, V v2);
 
     int countEdges();
 
     List<V> getShortestPath(V source, V destination);
 
-    E getMinimumDistance(V source, V destination);
+    Double getMinimumDistance(V source, V destination);
 
-    WeightedGraph<V, E> getSpanningTree();
+    WeightedGraph<V> getSpanningTree();
 
-    WeightedGraph<V, E> getMinimumSpanningTree();
+    WeightedGraph<V> getMinimumSpanningTree();
 }
 
