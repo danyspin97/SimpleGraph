@@ -10,7 +10,7 @@ import org.simplegraph.impl.base.BaseDirectedDenseGraph;
 /**
  * Undirected graph implemention for dense graphs.
  */
-public class DirectedWeightedDenseGraph<V, E> extends BaseDirectedDenseGraph<V, E> implements DirectedWeightedGraph<V, E> {
+public class DirectedWeightedDenseGraph<V> extends BaseDirectedDenseGraph<V, Double> implements DirectedWeightedGraph<V> {
     public DirectedWeightedDenseGraph() {
         initialize(DEFAULT_SIZE);
     }
@@ -20,7 +20,7 @@ public class DirectedWeightedDenseGraph<V, E> extends BaseDirectedDenseGraph<V, 
         initialize(size);
     }
 
-    public DirectedWeightedDenseGraph(DirectedWeightedDenseGraph<V, E> graph) {
+    public DirectedWeightedDenseGraph(DirectedWeightedDenseGraph<V> graph) {
         copy(graph);
     }
 
@@ -33,8 +33,8 @@ public class DirectedWeightedDenseGraph<V, E> extends BaseDirectedDenseGraph<V, 
      * @param  edge edge to add
      * @return      true if the graph has been modified
      */
-    public boolean addEdge(V v1, V v2, E edge) {
-        return addSingleEdge(v1, v2, edge);
+    public boolean addEdge(V v1, V v2, Double weight) {
+        return addSingleEdge(v1, v2, weight);
     }
 
     /**
@@ -43,51 +43,24 @@ public class DirectedWeightedDenseGraph<V, E> extends BaseDirectedDenseGraph<V, 
      * @param  v2   second vertex
      * @return      the edge from v1 to v2, if it exists, null otherwise
      */
-    public E getEdge(V v1, V v2) {
+    public Double getWeight(V v1, V v2) {
         return getSingleEdge(v1, v2);
     }
 
-    /**
-     * Get a list with the edges contained in the graph.
-     * @return list of the edges
-     */
-    public List<E> getEdges() {
-        List<E[]> edgesList =  Arrays.asList(edges);
-        List<E> t = new ArrayList<E>(edges.length * edges.length);
-        for (E[] e: edgesList) {
-            for (int i = 0; i != e.length; i++) {
-                if (e[i] != null) {
-                    t.add(e[i]);
-                }
-            }
-        }
-
-        return t;
+    public DirectedWeightedGraph<V> getSpanningTree() {
+        return (DirectedWeightedDenseGraph<V>) _getSpanningTree();
     }
 
-    public boolean isSource(V vertex, E edge) {
-        return checkEdge(vertex, edge, true);
-    }
-
-    public boolean isDestination(V vertex, E edge) {
-        return checkEdge(vertex, edge, false);
-    }
-
-    public DirectedWeightedGraph<V, E> getSpanningTree() {
-        return (DirectedWeightedDenseGraph<V, E>) _getSpanningTree();
-    }
-
-    public E getMinimumDistance(V source, V destination) {
+    public Double getMinimumDistance(V source, V destination) {
         // TODO
         return null;
     }
 
     public List<V> getShortestPath(V source, V destination) {
-        // TODO
         return null;
     }
 
-    public DirectedWeightedGraph<V, E> getMinimumSpanningTree() {
-        return getMinimumSpanningTree();
+    public DirectedWeightedGraph<V> getMinimumSpanningTree() {
+    return null;
     }
 }

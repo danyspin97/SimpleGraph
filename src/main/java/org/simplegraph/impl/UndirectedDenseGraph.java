@@ -16,7 +16,6 @@ public class UndirectedDenseGraph<V> extends BaseUndirectedDenseGraph<V, Boolean
     }
 
     public UndirectedDenseGraph(UndirectedDenseGraph<V> graph) {
-        // TODO
         copy(graph);
     }
 

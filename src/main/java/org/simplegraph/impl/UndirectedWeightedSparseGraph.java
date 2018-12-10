@@ -7,7 +7,7 @@ import java.util.List;
 import org.simplegraph.WeightedGraph;
 import org.simplegraph.impl.base.BaseSparseGraph;
 
-public class UndirectedWeightedSparseGraph<V, E> extends BaseSparseGraph<V, E> implements WeightedGraph<V, E> {
+public class UndirectedWeightedSparseGraph<V> extends BaseSparseGraph<V, Double> implements WeightedGraph<V> {
     /**
      * Default constructor
      */
@@ -31,9 +31,9 @@ public class UndirectedWeightedSparseGraph<V, E> extends BaseSparseGraph<V, E> i
      * @param  edge edge to add
      * @return      true if the graph has been modified
      */
-    public boolean addEdge(V v1, V v2, E edge) {
-        boolean a = addSingleEdge(v1, v2, edge);
-        boolean b = addSingleEdge(v2, v1, edge);
+    public boolean addEdge(V v1, V v2, Double weight) {
+        boolean a = addSingleEdge(v1, v2, weight);
+        boolean b = addSingleEdge(v2, v1, weight);
         return a || b;
     }
 
@@ -43,43 +43,24 @@ public class UndirectedWeightedSparseGraph<V, E> extends BaseSparseGraph<V, E> i
      * @param  v2   second vertex
      * @return      the edge between v1 and v2, if it exists, null otherwise
      */
-    public E getEdge(V v1, V v2) {
+    public Double getWeight(V v1, V v2) {
         return getSingleEdge(v1, v2);
-    }
-
-    /**
-     * Get all the edges in the graph.
-     * Each edge will be added only one time, even if it appears many times
-     * @return list of the edges
-     */
-    public List<E> getEdges() {
-        LinkedList<E> t = new LinkedList<E>();
-
-        for (HashMap<V, E> h : edges.values()) {
-            for (E e : h.values()) {
-                if (!t.contains(e)) {
-                    t.add(e);
-                }
-            }
-        }
-
-        return t;
     }
 
     public List<V> getShortestPath(V source, V destination) {
         return null;
     }
 
-    public E getMinimumDistance(V source, V destination) {
+    public Double getMinimumDistance(V source, V destination) {
         return null;
     }
 
-    public WeightedGraph<V, E> getSpanningTree() {
-        return new UndirectedWeightedSparseGraph<V, E>();
+    public WeightedGraph<V> getSpanningTree() {
+        return new UndirectedWeightedSparseGraph<V>();
     }
 
-    public WeightedGraph<V, E> getMinimumSpanningTree() {
-        return new UndirectedWeightedSparseGraph<V, E>();
+    public WeightedGraph<V> getMinimumSpanningTree() {
+        return new UndirectedWeightedSparseGraph<V>();
     }
 }
 

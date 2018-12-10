@@ -8,7 +8,7 @@ import java.util.List;
 import org.simplegraph.DirectedWeightedGraph;
 import org.simplegraph.impl.base.BaseDirectedSparseGraph;
 
-public class DirectedWeightedSparseGraph<V, E> extends BaseDirectedSparseGraph<V, E> implements DirectedWeightedGraph<V, E> {
+public class DirectedWeightedSparseGraph<V> extends BaseDirectedSparseGraph<V, Double> implements DirectedWeightedGraph<V> {
     /**
      * Default constructor
      */
@@ -32,8 +32,8 @@ public class DirectedWeightedSparseGraph<V, E> extends BaseDirectedSparseGraph<V
      * @param  edge edge to add
      * @return      true if the graph has been modified
      */
-    public boolean addEdge(V v1, V v2, E edge) {
-        return addSingleEdge(v1, v2, edge);
+    public boolean addEdge(V v1, V v2, Double weight) {
+        return addSingleEdge(v1, v2, weight);
     }
 
     /**
@@ -42,75 +42,19 @@ public class DirectedWeightedSparseGraph<V, E> extends BaseDirectedSparseGraph<V
      * @param  v2   second vertex
      * @return      the edge from v1 to v2, if it exists, null otherwise
      */
-    public E getEdge(V v1, V v2) {
+    public Double getWeight(V v1, V v2) {
         return getSingleEdge(v1, v2);
     }
 
-    /**
-     * Get all the edges in the graph.
-     * If an edge appears n times, there will be n copy of the edge in the list.
-     * @return list of the edges
-     */
-    public List<E> getEdges() {
-        LinkedList<E> t = new LinkedList<E>();
-
-        for (HashMap<V, E> h : edges.values()) {
-            t.addAll(h.values());
-        }
-
-        return t;
+    public DirectedWeightedGraph<V> getSpanningTree() {
+        return new DirectedWeightedSparseGraph<V>();
     }
 
-    /**
-     * Check if a vertex is the source of an edge.
-     * @param  vertex the specified vertex
-     * @param  edge   edge to check
-     * @return        true if vertex is the source of edge
-     */
-    public boolean isSource(V vertex, E edge) {
-        if (!containsVertex(vertex)) {
-            return false;
-        }
-
-        for (Map.Entry<V, E> e : edges.get(vertex).entrySet()) {
-            if (e.getValue().equals(edge)) {
-                return true;
-            }
-        }
-
-        return false;
+    public DirectedWeightedGraph<V> getMinimumSpanningTree() {
+        return new DirectedWeightedSparseGraph<V>();
     }
 
-    /**
-     * Check if a vertex is the destination of an edge.
-     * @param  vertex the specified vertex
-     * @param  edge   edge to check
-     * @return        true if vertex is the destination of edge
-     */
-    public boolean isDestination(V vertex, E edge) {
-        if (!containsVertex(vertex)) {
-            return false;
-        }
-
-        for (HashMap<V, E> h : edges.values()) {
-            E t = h.get(vertex);
-            if (t != null && t.equals(edge)) {
-                return true;
-            }
-        }
-
-        return false;
-    }
-
-    public DirectedWeightedGraph<V, E> getSpanningTree() {
-        return new DirectedWeightedSparseGraph<V, E>();
-    }
-
-    public DirectedWeightedGraph<V, E> getMinimumSpanningTree() {
-        return new DirectedWeightedSparseGraph<V, E>();
-    }
-
-    public E getMinimumDistance(V source, V destination) {
+    public Double getMinimumDistance(V source, V destination) {
         return null;
     }
 

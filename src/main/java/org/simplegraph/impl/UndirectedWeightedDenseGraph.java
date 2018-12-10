@@ -9,7 +9,7 @@ import org.simplegraph.impl.base.BaseUndirectedDenseGraph;
 /**
  * Undirected graph implemention for dense graphs.
  */
-public class UndirectedWeightedDenseGraph<V, E> extends BaseUndirectedDenseGraph<V, E> implements WeightedGraph<V, E> {
+public class UndirectedWeightedDenseGraph<V> extends BaseUndirectedDenseGraph<V, Double> implements WeightedGraph<V> {
     public UndirectedWeightedDenseGraph() {
         super();
     }
@@ -18,7 +18,7 @@ public class UndirectedWeightedDenseGraph<V, E> extends BaseUndirectedDenseGraph
         super(size);
     }
 
-    public UndirectedWeightedDenseGraph(UndirectedWeightedDenseGraph<V, E> graph) {
+    public UndirectedWeightedDenseGraph(UndirectedWeightedDenseGraph<V> graph) {
         copy(graph);
     }
 
@@ -30,8 +30,8 @@ public class UndirectedWeightedDenseGraph<V, E> extends BaseUndirectedDenseGraph
      * @param  edge edge to add
      * @return      true if the graph has been modified
      */
-    public boolean addEdge(V v1, V v2, E edge) {
-        return addSingleEdge(v1, v2, edge);
+    public boolean addEdge(V v1, V v2, Double weight) {
+        return addSingleEdge(v1, v2, weight);
     }
 
     /**
@@ -40,25 +40,16 @@ public class UndirectedWeightedDenseGraph<V, E> extends BaseUndirectedDenseGraph
      * @param  v2   second vertex
      * @return      the edge between v1 and v2, if it exists, null otherwise
      */
-    public E getEdge(V v1, V v2) {
+    public Double getWeight(V v1, V v2) {
         return getSingleEdge(v1, v2);
     }
 
-    /**
-     * Get a list with the edges contained in the graph.
-     * @return List of the edges
-     */
-    @SuppressWarnings("unchecked")
-    public List<E> getEdges() {
-        return (LinkedList<E>) edges.clone();
-    }
-
-    public WeightedGraph<V, E> getSpanningTree() {
+    public WeightedGraph<V> getSpanningTree() {
         // TODO
         return null;
     }
 
-    public E getMinimumDistance(V source, V destination) {
+    public Double getMinimumDistance(V source, V destination) {
         // TODO
         return null;
     }
@@ -68,7 +59,7 @@ public class UndirectedWeightedDenseGraph<V, E> extends BaseUndirectedDenseGraph
         return null;
     }
 
-    public WeightedGraph<V, E> getMinimumSpanningTree() {
+    public WeightedGraph<V> getMinimumSpanningTree() {
         return getMinimumSpanningTree();
     }
 }
