@@ -3,7 +3,6 @@ package org.simplegraph.impl;
 import java.util.List;
 
 import org.simplegraph.DirectedWeightedGraph;
-import org.simplegraph.impl.base.BaseDirectedSparseGraph;
 import org.simplegraph.util.Algorithms;
 
 public class DirectedWeightedSparseGraph<V> extends BaseDirectedSparseGraph<V, Double> implements DirectedWeightedGraph<V> {

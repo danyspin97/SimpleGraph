@@ -1,11 +1,11 @@
-package org.simplegraph.impl.base;
+package org.simplegraph.impl;
 
 import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.LinkedList;
 
-public abstract class BaseDirectedSparseGraph<V, E> extends BaseSparseGraph<V, E> {
+abstract class BaseDirectedSparseGraph<V, E> extends BaseSparseGraph<V, E> {
     /**
      * Default constructor
      */

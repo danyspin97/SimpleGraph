@@ -1,4 +1,4 @@
-package org.simplegraph.impl.base;
+package org.simplegraph.impl;
 
 import java.util.Arrays;
 import java.util.ArrayDeque;
@@ -7,7 +7,7 @@ import java.util.LinkedList;
 
 import org.simplegraph.DirectedGraph;
 
-public abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
+abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
     protected E[][] edges;
 
     /**

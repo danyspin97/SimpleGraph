@@ -1,7 +1,6 @@
 package org.simplegraph.impl;
 
 import org.simplegraph.Graph;
-import org.simplegraph.impl.base.BaseSparseGraph;
 
 public class UndirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implements Graph<V> {
     /**

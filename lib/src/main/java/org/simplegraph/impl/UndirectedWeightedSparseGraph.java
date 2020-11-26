@@ -5,7 +5,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.simplegraph.WeightedGraph;
-import org.simplegraph.impl.base.BaseSparseGraph;
 import org.simplegraph.util.Algorithms;
 
 public class UndirectedWeightedSparseGraph<V> extends BaseSparseGraph<V, Double> implements WeightedGraph<V> {

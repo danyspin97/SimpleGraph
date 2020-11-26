@@ -1,11 +1,11 @@
-package org.simplegraph.impl.base;
+package org.simplegraph.impl;
 
 import java.util.ArrayDeque;
 import java.util.List;
 import java.util.HashMap;
 import java.util.LinkedList;
 
-public abstract class BaseSparseGraph<V, E> {
+abstract class BaseSparseGraph<V, E> {
     protected static final int DEFAULT_SIZE = 15;
     protected HashMap<V, HashMap<V, E>> edges;
 

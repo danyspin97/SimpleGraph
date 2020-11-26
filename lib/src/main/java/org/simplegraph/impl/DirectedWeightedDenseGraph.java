@@ -6,7 +6,6 @@ import java.util.LinkedList;
 import java.util.List;
 
 import org.simplegraph.DirectedWeightedGraph;
-import org.simplegraph.impl.base.BaseDirectedDenseGraph;
 import org.simplegraph.util.FibonacciHeap;
 import org.simplegraph.util.Algorithms;
 

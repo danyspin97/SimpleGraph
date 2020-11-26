@@ -1,4 +1,4 @@
-package org.simplegraph.impl.base;
+package org.simplegraph.impl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.LinkedList;
 
-public abstract class BaseDenseGraph<V> {
+abstract class BaseDenseGraph<V> {
     protected static final short DEFAULT_SIZE = 15;
     protected int size;
     protected int verticesCount;

@@ -1,7 +1,6 @@
 package org.simplegraph.impl;
 
 import org.simplegraph.DirectedGraph;
-import org.simplegraph.impl.base.BaseDirectedDenseGraph;
 
 public class DirectedDenseGraph<V> extends BaseDirectedDenseGraph<V, Boolean> implements DirectedGraph<V> {
     /**

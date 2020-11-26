@@ -1,4 +1,4 @@
-package org.simplegraph.impl.base;
+package org.simplegraph.impl;
 
 import java.util.Arrays;
 import java.util.ArrayList;
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.LinkedList;
 import org.simplegraph.Graph;
 
-public abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
+abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
     protected ArrayList<E> edges;
 
     public BaseUndirectedDenseGraph() {

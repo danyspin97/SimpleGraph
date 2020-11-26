@@ -3,7 +3,6 @@ package org.simplegraph.impl;
 import java.util.List;
 
 import org.simplegraph.WeightedGraph;
-import org.simplegraph.impl.base.BaseUndirectedDenseGraph;
 import org.simplegraph.util.Algorithms;
 
 /**

@@ -1,7 +1,6 @@
 package org.simplegraph.impl;
 
 import org.simplegraph.Graph;
-import org.simplegraph.impl.base.BaseUndirectedDenseGraph;
 
 /**
  * Undirected graph implemention for dense graphs.

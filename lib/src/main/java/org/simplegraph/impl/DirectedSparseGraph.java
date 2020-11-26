@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.Map;
 
 import org.simplegraph.DirectedGraph;
-import org.simplegraph.impl.base.BaseDirectedSparseGraph;
 
 public class DirectedSparseGraph<V> extends BaseDirectedSparseGraph<V, Boolean> implements DirectedGraph<V> {
     /**
