@@ -1,8 +1,8 @@
 language: java
 sudo: false
-script: mvn clean verify
+script: ./gradlew test
 jdk:
   - oraclejdk11
   - openjdk11
 after_success:
-  - mvn clean test cobertura:cobertura coveralls:report
+  - ./gradlew cobertura coveralls
