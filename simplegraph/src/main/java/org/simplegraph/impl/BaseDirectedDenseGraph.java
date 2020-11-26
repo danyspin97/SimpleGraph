@@ -5,8 +5,6 @@ import java.util.ArrayDeque;
 import java.util.List;
 import java.util.LinkedList;
 
-import org.simplegraph.DirectedGraph;
-
 abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
     protected E[][] edges;
 

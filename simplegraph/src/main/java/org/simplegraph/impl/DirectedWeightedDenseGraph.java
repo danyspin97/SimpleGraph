@@ -1,12 +1,8 @@
 package org.simplegraph.impl;
 
-import java.util.Arrays;
-import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 import org.simplegraph.DirectedWeightedGraph;
-import org.simplegraph.util.FibonacciHeap;
 import org.simplegraph.util.Algorithms;
 
 /**

@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.ArrayDeque;
 import java.util.List;
 import java.util.LinkedList;
+
 import org.simplegraph.Graph;
 
 abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
