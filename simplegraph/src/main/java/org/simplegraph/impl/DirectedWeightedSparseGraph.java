@@ -5,6 +5,9 @@ import java.util.List;
 import org.simplegraph.DirectedWeightedGraph;
 import org.simplegraph.util.Algorithms;
 
+/**
+ Sparse graph implementation for directed and weighted graphs.
+ */
 public class DirectedWeightedSparseGraph<V> extends BaseDirectedSparseGraph<V, Double> implements DirectedWeightedGraph<V> {
     /**
      * Default constructor

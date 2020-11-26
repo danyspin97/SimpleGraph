@@ -2,6 +2,9 @@ package org.simplegraph.impl;
 
 import org.simplegraph.DirectedGraph;
 
+/**
+ Dense graph implementation for directed graphs.
+ */
 public class DirectedDenseGraph<V> extends BaseDirectedDenseGraph<V, Boolean> implements DirectedGraph<V> {
     /**
      * Default constructor

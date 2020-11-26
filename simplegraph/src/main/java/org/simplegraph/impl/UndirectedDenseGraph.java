@@ -3,7 +3,7 @@ package org.simplegraph.impl;
 import org.simplegraph.Graph;
 
 /**
- * Undirected graph implemention for dense graphs.
+ * Dense graph implemention.
  */
 public class UndirectedDenseGraph<V> extends BaseUndirectedDenseGraph<V, Boolean> implements Graph<V> {
     public UndirectedDenseGraph() {

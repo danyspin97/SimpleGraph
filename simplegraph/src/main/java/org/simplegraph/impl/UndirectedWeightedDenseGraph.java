@@ -6,7 +6,7 @@ import org.simplegraph.WeightedGraph;
 import org.simplegraph.util.Algorithms;
 
 /**
- * Undirected graph implemention for dense graphs.
+ * Dense graph implemention for weighted graphs.
  */
 public class UndirectedWeightedDenseGraph<V> extends BaseUndirectedDenseGraph<V, Double> implements WeightedGraph<V> {
     public UndirectedWeightedDenseGraph() {

@@ -2,6 +2,9 @@ package org.simplegraph.impl;
 
 import org.simplegraph.Graph;
 
+/**
+ Sparse graph implementation.
+ */
 public class UndirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implements Graph<V> {
     /**
      * Default constructor

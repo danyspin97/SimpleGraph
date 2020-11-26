@@ -7,6 +7,9 @@ import java.util.Map;
 
 import org.simplegraph.DirectedGraph;
 
+/**
+ Sparse graph implementation for directed graphs.
+ */
 public class DirectedSparseGraph<V> extends BaseDirectedSparseGraph<V, Boolean> implements DirectedGraph<V> {
     /**
      * Default constructor
