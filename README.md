@@ -5,6 +5,26 @@
 
 Basic graph interfaces and implementations in Java.
 
+## Build the library
+
+To build the libray on a Unix system run the following command:
+
+```bash
+./gradlew build
+```
+
+Or, if you are using a windows system:
+
+```
+gradlew.bat build
+```
+
+To generate the jar library file:
+
+```bash
+./gradlew jar
+```
+
 ## Interfaces
 
 - [x] Graphs
