@@ -1,0 +1,243 @@
+!SESSION 2018-10-03 15:34:15.314 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_172
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:34:17.566
+!MESSAGE class org.eclipse.jdt.ls.core.internal.JavaLanguageServerPlugin is started
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:34:17.676
+!MESSAGE Main thread is waiting
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:34:17.697
+!MESSAGE >> initialize
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:34:17.698
+!MESSAGE Initializing Java Language Server 0.25.0.201809251314
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:34:17.737
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:34:17.780
+!MESSAGE Creating the default Java project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:34:18.670
+!MESSAGE Finished creating the default Java project
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:34:18.924
+!MESSAGE Importing Eclipse project(s)
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:34:18.931
+!MESSAGE Workspace initialized in 1224ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:34:19.160
+!MESSAGE Classpath is incomplete. Only syntax errors will be reported for file:///home/danyspin97/Projects/coding/newSimpleGraph/simplegraph-core/src/main/java/org/simplegraph/graph/BaseSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:34:19.897
+!MESSAGE begin problem for /BaseSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:34:19.897
+!MESSAGE 0 problems reported for /BaseSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:34:19.901
+!MESSAGE Reconciled 0, validated: 1. Took 284 ms
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:32.618
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:32.626
+!MESSAGE Classpath is incomplete. Only syntax errors will be reported for file:///home/danyspin97/Projects/coding/newSimpleGraph/simplegraph-core/src/main/java/org/simplegraph/graph/UndirectedSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:32.653
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:32.667
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:32.803
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:32.810
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:32.850
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:32.910
+!MESSAGE Classpath is incomplete. Only syntax errors will be reported for file:///home/danyspin97/Projects/coding/newSimpleGraph/simplegraph-core/src/main/java/org/simplegraph/graph/UndirectedDenseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:32.925
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:32.929
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:33.004
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:33.012
+!MESSAGE Classpath is incomplete. Only syntax errors will be reported for file:///home/danyspin97/Projects/coding/newSimpleGraph/simplegraph-core/src/main/java/org/simplegraph/graph/DirectedDenseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:33.095
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:33.120
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:33.395
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:33.407
+!MESSAGE Classpath is incomplete. Only syntax errors will be reported for file:///home/danyspin97/Projects/coding/newSimpleGraph/simplegraph-core/src/main/java/org/simplegraph/graph/DirectedWeightedSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:33.455
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:33.457
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:33.486
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:33.494
+!MESSAGE Classpath is incomplete. Only syntax errors will be reported for file:///home/danyspin97/Projects/coding/newSimpleGraph/simplegraph-core/src/main/java/org/simplegraph/graph/DirectedSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:33.889
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:33.895
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:34.002
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:34.010
+!MESSAGE Classpath is incomplete. Only syntax errors will be reported for file:///home/danyspin97/Projects/coding/newSimpleGraph/simplegraph-core/src/main/java/org/simplegraph/graph/BaseDirectedSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:34.342
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:34.350
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:34.676
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:34.686
+!MESSAGE Classpath is incomplete. Only syntax errors will be reported for file:///home/danyspin97/Projects/coding/newSimpleGraph/simplegraph-core/src/main/java/org/simplegraph/graph/UndirectedWeightedDenseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:34.912
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:34.917
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:35.284
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:35.292
+!MESSAGE Classpath is incomplete. Only syntax errors will be reported for file:///home/danyspin97/Projects/coding/newSimpleGraph/simplegraph-core/src/main/java/org/simplegraph/graph/UndirectedWeightedSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:35.297
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:35.299
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:35.324
+!MESSAGE >> document/didOpen
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:35.460
+!MESSAGE Classpath is incomplete. Only syntax errors will be reported for file:///home/danyspin97/Projects/coding/newSimpleGraph/simplegraph-core/src/main/java/org/simplegraph/graph/BaseUndirectedDenseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:35.952
+!MESSAGE >> document/didChange
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:36.003
+!MESSAGE >> document/didSave
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.469
+!MESSAGE begin problem for /DirectedDenseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.470
+!MESSAGE 1 problems reported for /DirectedDenseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.488
+!MESSAGE begin problem for /DirectedWeightedSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.488
+!MESSAGE 2 problems reported for /DirectedWeightedSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.506
+!MESSAGE begin problem for /BaseDirectedSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.506
+!MESSAGE 1 problems reported for /BaseDirectedSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.526
+!MESSAGE begin problem for /UndirectedWeightedDenseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.528
+!MESSAGE TODO is of type Task
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.528
+!MESSAGE TODO is of type Task
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.529
+!MESSAGE TODO is of type Task
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.529
+!MESSAGE TODO is of type Task
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.529
+!MESSAGE 5 problems reported for /UndirectedWeightedDenseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.558
+!MESSAGE begin problem for /BaseUndirectedDenseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.559
+!MESSAGE 1 problems reported for /BaseUndirectedDenseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.693
+!MESSAGE begin problem for /BaseSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.693
+!MESSAGE 1 problems reported for /BaseSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.704
+!MESSAGE begin problem for /UndirectedSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.705
+!MESSAGE 1 problems reported for /UndirectedSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.814
+!MESSAGE begin problem for /DirectedSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.814
+!MESSAGE 1 problems reported for /DirectedSparseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.832
+!MESSAGE begin problem for /UndirectedDenseGraph.java
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.832
+!MESSAGE TODO is of type Task
+
+!ENTRY org.eclipse.jdt.ls.core 1 0 2018-10-03 15:35:38.869
+!MESSAGE 2 problems reported for /UndirectedDenseGraph.java
+!SESSION 2018-10-03 15:40:46.912 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_172
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-10-03 15:40:48.997
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
+!SESSION 2018-10-03 15:41:42.217 -----------------------------------------------
+eclipse.buildId=unknown
+java.version=1.8.0_172
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=en_GB
+
+!ENTRY org.eclipse.core.resources 2 10035 2018-10-03 15:41:45.094
+!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
