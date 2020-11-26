@@ -1,2 +1,2 @@
 rootProject.name = "simplegraph"
-include("lib")
+include("simplegraph")
