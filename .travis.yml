@@ -4,3 +4,5 @@ script: mvn clean verify
 jdk:
   - oraclejdk11
   - openjdk11
+after_success:
+  - mvn clean test cobertura:cobertura coveralls:report
