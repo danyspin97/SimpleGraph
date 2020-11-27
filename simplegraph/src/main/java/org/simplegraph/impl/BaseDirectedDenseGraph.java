@@ -106,7 +106,7 @@ abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * @param  edge edge to add
      * @return      true if the graph has been modified
      */
-    public boolean addSingleEdge(V v1, V v2, E edge) {
+    protected boolean addSingleEdge(V v1, V v2, E edge) {
         // Null is not a valid value
         if (v1 == null || v2 == null || edge == null) {
             return false;
@@ -438,7 +438,7 @@ abstract class BaseDirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
      * Get a spanning tree if it exists.
      * @return Graph containing a spanning tree if it exists, null otherwise.
      */
-    public BaseDirectedDenseGraph<V, E> _getSpanningTree() {
+    protected BaseDirectedDenseGraph<V, E> _getSpanningTree() {
         return null;
     }
 }

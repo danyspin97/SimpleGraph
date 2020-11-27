@@ -380,7 +380,7 @@ abstract class BaseUndirectedDenseGraph<V, E> extends BaseDenseGraph<V> {
         return !path.isEmpty();
     }
 
-    public BaseUndirectedDenseGraph<V,E> _getSpanningTree() {
+    protected BaseUndirectedDenseGraph<V,E> _getSpanningTree() {
         return null;
     }
 
