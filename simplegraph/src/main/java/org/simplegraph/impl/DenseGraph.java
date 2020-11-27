@@ -5,16 +5,16 @@ import org.simplegraph.Graph;
 /**
  * Dense graph implemention.
  */
-public class UndirectedDenseGraph<V> extends BaseUndirectedDenseGraph<V, Boolean> implements Graph<V> {
-    public UndirectedDenseGraph() {
+public class DenseGraph<V> extends BaseUndirectedDenseGraph<V, Boolean> implements Graph<V> {
+    public DenseGraph() {
         super();
     }
 
-    public UndirectedDenseGraph(int size) {
+    public DenseGraph(int size) {
         super(size);
     }
 
-    public UndirectedDenseGraph(UndirectedDenseGraph<V> graph) {
+    public DenseGraph(DenseGraph<V> graph) {
         copy(graph);
     }
 
@@ -31,6 +31,6 @@ public class UndirectedDenseGraph<V> extends BaseUndirectedDenseGraph<V, Boolean
 
     public Graph<V> getSpanningTree()
     {
-        return new UndirectedDenseGraph<V>();
+        return new DenseGraph<V>();
     }
 }

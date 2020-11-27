@@ -8,11 +8,11 @@ import org.simplegraph.util.Algorithms;
 /**
  Sparse graph implementation for weighted graph.
  */
-public class UndirectedWeightedSparseGraph<V> extends BaseSparseGraph<V, Double> implements WeightedGraph<V> {
+public class WeightedSparseGraph<V> extends BaseSparseGraph<V, Double> implements WeightedGraph<V> {
     /**
      * Default constructor
      */
-    public UndirectedWeightedSparseGraph() {
+    public WeightedSparseGraph() {
         super();
     }
 
@@ -20,7 +20,7 @@ public class UndirectedWeightedSparseGraph<V> extends BaseSparseGraph<V, Double>
      * Create a graph with a starting size.
      * @param size starting size
      */
-    public UndirectedWeightedSparseGraph(int size) {
+    public WeightedSparseGraph(int size) {
         super(size);
     }
 
@@ -57,11 +57,11 @@ public class UndirectedWeightedSparseGraph<V> extends BaseSparseGraph<V, Double>
     }
 
     public WeightedGraph<V> getSpanningTree() {
-        return new UndirectedWeightedSparseGraph<V>();
+        return new WeightedSparseGraph<V>();
     }
 
     public WeightedGraph<V> getMinimumSpanningTree() {
-        return new UndirectedWeightedSparseGraph<V>();
+        return new WeightedSparseGraph<V>();
     }
 }
 

@@ -5,6 +5,6 @@ import org.junit.jupiter.api.BeforeEach;
 public class TestUndirectedDenseGraph extends TestUndirectedGraph {
     @BeforeEach
     public void init() {
-        setGraph(new UndirectedDenseGraph<String>());
+        setGraph(new DenseGraph<String>());
     }
 }

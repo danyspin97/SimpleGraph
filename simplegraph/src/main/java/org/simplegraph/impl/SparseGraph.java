@@ -5,11 +5,11 @@ import org.simplegraph.Graph;
 /**
  Sparse graph implementation.
  */
-public class UndirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implements Graph<V> {
+public class SparseGraph<V> extends BaseSparseGraph<V, Boolean> implements Graph<V> {
     /**
      * Default constructor
      */
-    public UndirectedSparseGraph() {
+    public SparseGraph() {
         super();
     }
 
@@ -17,7 +17,7 @@ public class UndirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implem
      * Create a graph with a starting size.
      * @param size starting size
      */
-    public UndirectedSparseGraph(int size) {
+    public SparseGraph(int size) {
         super(size);
     }
 
@@ -35,7 +35,7 @@ public class UndirectedSparseGraph<V> extends BaseSparseGraph<V, Boolean> implem
     }
 
     public Graph<V> getSpanningTree() {
-        return new UndirectedSparseGraph<V>();
+        return new SparseGraph<V>();
     }
 }
 

@@ -8,16 +8,16 @@ import org.simplegraph.util.Algorithms;
 /**
  * Dense graph implemention for weighted graphs.
  */
-public class UndirectedWeightedDenseGraph<V> extends BaseUndirectedDenseGraph<V, Double> implements WeightedGraph<V> {
-    public UndirectedWeightedDenseGraph() {
+public class WeightedDenseGraph<V> extends BaseUndirectedDenseGraph<V, Double> implements WeightedGraph<V> {
+    public WeightedDenseGraph() {
         super();
     }
 
-    public UndirectedWeightedDenseGraph(int size) {
+    public WeightedDenseGraph(int size) {
         super(size);
     }
 
-    public UndirectedWeightedDenseGraph(UndirectedWeightedDenseGraph<V> graph) {
+    public WeightedDenseGraph(WeightedDenseGraph<V> graph) {
         copy(graph);
     }
 
