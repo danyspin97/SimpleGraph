@@ -26,23 +26,61 @@ public class DirectedSparseGraph<V> extends BaseDirectedSparseGraph<V, Boolean> 
         super(size);
     }
 
-    /**
-     * Add an edge that goes from the first vertex to the second.
-     * Add the two vertices in the graph if they don't exists.
-     * @param  v1   first vertex
-     * @param  v2   second vertex
-     * @return      true if the graph has been modified
-     */
+    @Override
     public boolean addEdge(V v1, V v2) {
         return addSingleEdge(v1, v2, true);
     }
 
-    /**
-     * Get the neighbors of a vertex, both incident and outer vertices.
-     * @param  vertex the specified vertex
-     * @return        the collection of vertices that are neighbors of vertex
-     *                null if the vertex is not contained in the graph
-     */
+    @Override
+     public boolean addVertex(V vertex) {
+         return super.addVertex(vertex);
+     }
+
+    @Override
+    public boolean containsVertex(V vertex) {
+        return super.containsVertex(vertex);
+    }
+
+    @Override
+    public int countVertices() {
+        return super.countVertices();
+    }
+
+    @Override
+    public boolean existsPath(V source, V destination) {
+        return super.existsPath(source, destination);
+    }
+
+    @Override
+    public boolean existsEdge(V v1, V v2) {
+        return super.existsEdge(v1, v2);
+    }
+
+    @Override
+    public int countNeighbors(V vertex) {
+        return super.countNeighbors(vertex);
+    }
+
+    @Override
+    public List<V> getPath(V source, V destination) {
+        return super.getPath(source, destination);
+    }
+
+    @Override
+    public boolean removeEdge(V v1, V v2) {
+        return super.removeEdge(v1, v2);
+    }
+
+    @Override
+    public boolean removeVertex(V vertex) {
+        return super.removeVertex(vertex);
+    }
+
+    @Override
+    public List<V> getVertices() {
+        return super.getVertices();
+    }
+    @Override
     public List<V> getNeighbors(V vertex) {
         if (!containsVertex(vertex)) {
             return null;
@@ -60,12 +98,7 @@ public class DirectedSparseGraph<V> extends BaseDirectedSparseGraph<V, Boolean> 
         return neighbors;
     }
 
-    /**
-     * Get the incident vertices of a vertex.
-     * @param  vertex the specified vertex
-     * @return        a list containing the incident vertices of vertex,
-     *                null if vertex is not contained in the graph
-     */
+    @Override
     public List<V> getInVertices(V vertex) {
         if (!containsVertex(vertex)) {
             return null;
@@ -83,12 +116,7 @@ public class DirectedSparseGraph<V> extends BaseDirectedSparseGraph<V, Boolean> 
         return vertices;
     }
 
-    /**
-     * Get the outer vertices of a vertex.
-     * @param  vertex the specified vertex
-     * @return        a list containing the outer vertices of vertex,
-     *                null if vertex is not contained in the graph
-     */
+    @Override
     public List<V> getOutVertices(V vertex) {
         if (!containsVertex(vertex)) {
             return null;
@@ -97,12 +125,7 @@ public class DirectedSparseGraph<V> extends BaseDirectedSparseGraph<V, Boolean> 
         return new LinkedList<V>(edges.get(vertex).keySet());
     }
 
-    /**
-     * Get the number of incident vertices of a vertex.
-     * @param  vertex the specified vertex
-     * @return        the number of incident vertices of vertex, -1 if vertex
-     *                is not contained in the graph
-     */
+    @Override
     public int getInDegree(V vertex) {
         if (!containsVertex(vertex)) {
             return -1;
@@ -111,12 +134,7 @@ public class DirectedSparseGraph<V> extends BaseDirectedSparseGraph<V, Boolean> 
         return getInVertices(vertex).size();
     }
 
-    /**
-     * Get the number of outer vertices of a vertex.
-     * @param  vertex the specified vertex
-     * @return        the number of outer vertices of vertex, -1 if vertex
-     *                is not contained in the graph
-     */
+    @Override
     public int getOutDegree(V vertex) {
         if (!containsVertex(vertex)) {
             return -1;
@@ -125,6 +143,7 @@ public class DirectedSparseGraph<V> extends BaseDirectedSparseGraph<V, Boolean> 
         return getOutVertices(vertex).size();
     }
 
+    @Override
     public DirectedGraph<V> getSpanningTree() {
         return new DirectedSparseGraph<V>();
     }
