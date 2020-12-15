@@ -26,6 +26,10 @@ public class DirectedSparseGraph<V> extends BaseDirectedSparseGraph<V, Boolean> 
         super(size);
     }
 
+    public DirectedSparseGraph(DirectedSparseGraph<V> graph) {
+        copy(graph);
+    }
+
     @Override
     public boolean addEdge(V v1, V v2) {
         return addSingleEdge(v1, v2, true);

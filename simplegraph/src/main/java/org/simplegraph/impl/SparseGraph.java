@@ -23,6 +23,10 @@ public class SparseGraph<V> extends BaseSparseGraph<V, Boolean> implements Graph
         super(size);
     }
 
+    public SparseGraph(SparseGraph<V> graph) {
+        copy(graph);
+    }
+
     @Override
     public boolean addEdge(V v1, V v2) {
         boolean a = addSingleEdge(v1, v2, true);

@@ -24,6 +24,10 @@ public class WeightedSparseGraph<V> extends BaseSparseGraph<V, Double> implement
         super(size);
     }
 
+    public WeightedSparseGraph(WeightedSparseGraph<V> graph) {
+        copy(graph);
+    }
+
     @Override
     public boolean addEdge(V v1, V v2, Double weight) {
         boolean a = addSingleEdge(v1, v2, weight);

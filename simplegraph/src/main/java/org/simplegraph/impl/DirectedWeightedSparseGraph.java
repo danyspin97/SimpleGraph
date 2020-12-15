@@ -24,6 +24,10 @@ public class DirectedWeightedSparseGraph<V> extends BaseDirectedSparseGraph<V, D
         super(size);
     }
 
+    public DirectedWeightedSparseGraph(DirectedWeightedSparseGraph<V> graph) {
+        copy(graph);
+    }
+
     @Override
     public boolean addEdge(V v1, V v2, Double weight) {
         return addSingleEdge(v1, v2, weight);

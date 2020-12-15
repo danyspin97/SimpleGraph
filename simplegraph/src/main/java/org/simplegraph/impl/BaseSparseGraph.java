@@ -24,6 +24,14 @@ abstract class BaseSparseGraph<V, E> {
         edges = new HashMap<V, HashMap<V, E>>(size);
     }
 
+    public void copy(BaseSparseGraph<V, E> graph) {
+        edges = new HashMap<V, HashMap<V, E>>(graph.edges.size());
+        for (HashMap.Entry<V, HashMap<V, E>> entry: graph.edges.entrySet()) {
+            HashMap<V, E> map = (HashMap<V, E>)entry.getValue().clone();
+            edges.put(entry.getKey(), map);
+        }
+    }
+
     /**
      * Add a vertex to the graph.
      * @param  vertex the vertex to add
