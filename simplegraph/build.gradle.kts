@@ -5,15 +5,11 @@
 plugins {
     `java-library`
     `maven-publish`
-    id("net.saliman.cobertura") version "4.0.0"
-    id("com.github.kt3k.coveralls") version "2.10.2"
+    jacoco
+    id("com.github.kt3k.coveralls") version "2.12.2"
 }
 
-apply(plugin = "net.saliman.cobertura")
-cobertura.coverageFormats = mutableSetOf("html", "xml")
-
 repositories {
-    mavenLocal()
     mavenCentral()
 }
 
@@ -23,18 +19,14 @@ dependencies {
     testImplementation("org.junit.platform:junit-platform-runner:1.3.1")
     testImplementation("org.junit.platform:junit-platform-launcher:1.3.1")
     testImplementation("org.junit.jupiter:junit-jupiter-api:5.3.1")
-    testRuntime("org.slf4j:slf4j-api:1.7.10")
 }
 
 group = "org.simplegraph"
-version = "1.0.0"
-description = "simplegraph"
-java.sourceCompatibility = JavaVersion.VERSION_1_8
-
-publishing {
-    publications.create<MavenPublication>("maven") {
-        from(components["java"])
-    }
+version = "1.0.1"
+description = "simple single-edge graph implemetation"
+configure<JavaPluginExtension> {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
 }
 
 tasks.withType<JavaCompile>() {
@@ -48,6 +40,19 @@ tasks.jar {
     }
 }
 
+tasks.jacocoTestReport {
+    reports {
+        xml.required = true
+        csv.required = false
+        html.required = true
+    }
+}
+
 tasks.test {
     useJUnitPlatform()
+    finalizedBy(tasks.jacocoTestReport) // report is always generated after tests run
 }
+tasks.jacocoTestReport {
+    dependsOn(tasks.test) // tests are required to run before generating the report
+}
+
