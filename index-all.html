@@ -80,11 +80,11 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Add an edge that goes from the first vertex to the second.</div>
 </dd>
-<dt><a href="org/simplegraph/impl/DirectedSparseGraph.html#addSingleEdge(V,V,E)" class="member-name-link">addSingleEdge(V, V, Boolean)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedSparseGraph.html" title="class in org.simplegraph.impl">DirectedSparseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/WeightedSparseGraph.html#addSingleEdge(V,V,E)" class="member-name-link">addSingleEdge(V, V, Double)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedSparseGraph.html" title="class in org.simplegraph.impl">WeightedSparseGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/impl/WeightedDenseGraph.html#addSingleEdge(V,V,E)" class="member-name-link">addSingleEdge(V, V, Double)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedDenseGraph.html" title="class in org.simplegraph.impl">WeightedDenseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/DenseGraph.html#addSingleEdge(V,V,E)" class="member-name-link">addSingleEdge(V, V, Boolean)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DenseGraph.html" title="class in org.simplegraph.impl">DenseGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/WeightedGraph.html#addVertex(V)" class="member-name-link">addVertex(V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/WeightedGraph.html" title="interface in org.simplegraph">WeightedGraph</a></dt>
+<dt><a href="org/simplegraph/DirectedWeightedGraph.html#addVertex(V)" class="member-name-link">addVertex(V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/DirectedWeightedGraph.html" title="interface in org.simplegraph">DirectedWeightedGraph</a></dt>
 <dd>
 <div class="block">Add a vertex to the graph.</div>
 </dd>
@@ -113,7 +113,7 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="org/simplegraph/impl/DirectedWeightedDenseGraph.html#checkEdge(V,E,boolean)" class="member-name-link">checkEdge(V, Double, boolean)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedWeightedDenseGraph.html" title="class in org.simplegraph.impl">DirectedWeightedDenseGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/WeightedGraph.html#containsVertex(V)" class="member-name-link">containsVertex(V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/WeightedGraph.html" title="interface in org.simplegraph">WeightedGraph</a></dt>
+<dt><a href="org/simplegraph/DirectedWeightedGraph.html#containsVertex(V)" class="member-name-link">containsVertex(V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/DirectedWeightedGraph.html" title="interface in org.simplegraph">DirectedWeightedGraph</a></dt>
 <dd>
 <div class="block">Check the existence of a vertex in the graph.</div>
 </dd>
@@ -137,9 +137,9 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Copy constructor</div>
 </dd>
-<dt><a href="org/simplegraph/impl/DirectedSparseGraph.html#copy(org.simplegraph.impl.BaseSparseGraph)" class="member-name-link">copy(BaseSparseGraph&lt;V, Boolean&gt;)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedSparseGraph.html" title="class in org.simplegraph.impl">DirectedSparseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/WeightedSparseGraph.html#copy(org.simplegraph.impl.BaseSparseGraph)" class="member-name-link">copy(BaseSparseGraph&lt;V, Double&gt;)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedSparseGraph.html" title="class in org.simplegraph.impl">WeightedSparseGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/impl/WeightedDenseGraph.html#copy(org.simplegraph.impl.BaseUndirectedDenseGraph)" class="member-name-link">copy(BaseUndirectedDenseGraph&lt;V, Double&gt;)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedDenseGraph.html" title="class in org.simplegraph.impl">WeightedDenseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/DenseGraph.html#copy(org.simplegraph.impl.BaseUndirectedDenseGraph)" class="member-name-link">copy(BaseUndirectedDenseGraph&lt;V, Boolean&gt;)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DenseGraph.html" title="class in org.simplegraph.impl">DenseGraph</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/simplegraph/impl/DirectedWeightedDenseGraph.html#copyVertices(org.simplegraph.impl.BaseDenseGraph)" class="member-name-link">copyVertices(BaseDenseGraph&lt;V&gt;)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedWeightedDenseGraph.html" title="class in org.simplegraph.impl">DirectedWeightedDenseGraph</a></dt>
 <dd>&nbsp;</dd>
@@ -151,15 +151,15 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Get how many edges the graph contains.</div>
 </dd>
-<dt><a href="org/simplegraph/impl/DirectedSparseGraph.html#countEdges()" class="member-name-link">countEdges()</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedSparseGraph.html" title="class in org.simplegraph.impl">DirectedSparseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/DirectedWeightedSparseGraph.html#countEdges()" class="member-name-link">countEdges()</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedWeightedSparseGraph.html" title="class in org.simplegraph.impl">DirectedWeightedSparseGraph</a></dt>
 <dd>
 <div class="block">Get the number of edges in the graph.</div>
 </dd>
-<dt><a href="org/simplegraph/impl/SparseGraph.html#countEdges()" class="member-name-link">countEdges()</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/SparseGraph.html" title="class in org.simplegraph.impl">SparseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/WeightedSparseGraph.html#countEdges()" class="member-name-link">countEdges()</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedSparseGraph.html" title="class in org.simplegraph.impl">WeightedSparseGraph</a></dt>
 <dd>
 <div class="block">Get the number of edges in the graph.</div>
 </dd>
-<dt><a href="org/simplegraph/impl/WeightedDenseGraph.html#countEdges()" class="member-name-link">countEdges()</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedDenseGraph.html" title="class in org.simplegraph.impl">WeightedDenseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/DenseGraph.html#countEdges()" class="member-name-link">countEdges()</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DenseGraph.html" title="class in org.simplegraph.impl">DenseGraph</a></dt>
 <dd>
 <div class="block">Get the number of edges in the graph.</div>
 </dd>
@@ -167,7 +167,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Get the number of edges in the graph.</div>
 </dd>
-<dt><a href="org/simplegraph/WeightedGraph.html#countNeighbors(V)" class="member-name-link">countNeighbors(V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/WeightedGraph.html" title="interface in org.simplegraph">WeightedGraph</a></dt>
+<dt><a href="org/simplegraph/DirectedWeightedGraph.html#countNeighbors(V)" class="member-name-link">countNeighbors(V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/DirectedWeightedGraph.html" title="interface in org.simplegraph">DirectedWeightedGraph</a></dt>
 <dd>
 <div class="block">Get the number of neighbors for a vertex.</div>
 </dd>
@@ -187,7 +187,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/simplegraph/impl/WeightedSparseGraph.html#countNeighbors(V)" class="member-name-link">countNeighbors(V)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedSparseGraph.html" title="class in org.simplegraph.impl">WeightedSparseGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/WeightedGraph.html#countVertices()" class="member-name-link">countVertices()</a> - Method in interface org.simplegraph.<a href="org/simplegraph/WeightedGraph.html" title="interface in org.simplegraph">WeightedGraph</a></dt>
+<dt><a href="org/simplegraph/DirectedWeightedGraph.html#countVertices()" class="member-name-link">countVertices()</a> - Method in interface org.simplegraph.<a href="org/simplegraph/DirectedWeightedGraph.html" title="interface in org.simplegraph">DirectedWeightedGraph</a></dt>
 <dd>
 <div class="block">Get the number of vertices in the graph.</div>
 </dd>
@@ -216,7 +216,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/simplegraph/impl/DirectedWeightedDenseGraph.html#DEFAULT_SIZE" class="member-name-link">DEFAULT_SIZE</a> - Static variable in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedWeightedDenseGraph.html" title="class in org.simplegraph.impl">DirectedWeightedDenseGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/impl/DirectedSparseGraph.html#DEFAULT_SIZE" class="member-name-link">DEFAULT_SIZE</a> - Static variable in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedSparseGraph.html" title="class in org.simplegraph.impl">DirectedSparseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/WeightedSparseGraph.html#DEFAULT_SIZE" class="member-name-link">DEFAULT_SIZE</a> - Static variable in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedSparseGraph.html" title="class in org.simplegraph.impl">WeightedSparseGraph</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/simplegraph/util/FibonacciHeap.html#delete(org.simplegraph.util.FibonacciHeap.Entry)" class="member-name-link">delete(FibonacciHeap.Entry&lt;T&gt;)</a> - Method in class org.simplegraph.util.<a href="org/simplegraph/util/FibonacciHeap.html" title="class in org.simplegraph.util">FibonacciHeap</a></dt>
 <dd>
@@ -303,16 +303,16 @@ loadScripts(document, 'script');</script>
 <dl class="index">
 <dt><a href="org/simplegraph/impl/DirectedWeightedDenseGraph.html#edges" class="member-name-link">edges</a> - Variable in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedWeightedDenseGraph.html" title="class in org.simplegraph.impl">DirectedWeightedDenseGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/impl/DirectedSparseGraph.html#edges" class="member-name-link">edges</a> - Variable in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedSparseGraph.html" title="class in org.simplegraph.impl">DirectedSparseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/WeightedSparseGraph.html#edges" class="member-name-link">edges</a> - Variable in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedSparseGraph.html" title="class in org.simplegraph.impl">WeightedSparseGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/impl/WeightedDenseGraph.html#edges" class="member-name-link">edges</a> - Variable in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedDenseGraph.html" title="class in org.simplegraph.impl">WeightedDenseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/DenseGraph.html#edges" class="member-name-link">edges</a> - Variable in class org.simplegraph.impl.<a href="org/simplegraph/impl/DenseGraph.html" title="class in org.simplegraph.impl">DenseGraph</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/simplegraph/util/FibonacciHeap.html#enqueue(T,double)" class="member-name-link">enqueue(T, double)</a> - Method in class org.simplegraph.util.<a href="org/simplegraph/util/FibonacciHeap.html" title="class in org.simplegraph.util">FibonacciHeap</a></dt>
 <dd>
 <div class="block">Inserts the specified element into the Fibonacci heap with the specified
  priority.</div>
 </dd>
-<dt><a href="org/simplegraph/WeightedGraph.html#existsEdge(V,V)" class="member-name-link">existsEdge(V, V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/WeightedGraph.html" title="interface in org.simplegraph">WeightedGraph</a></dt>
+<dt><a href="org/simplegraph/DirectedWeightedGraph.html#existsEdge(V,V)" class="member-name-link">existsEdge(V, V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/DirectedWeightedGraph.html" title="interface in org.simplegraph">DirectedWeightedGraph</a></dt>
 <dd>
 <div class="block">Check the existence of an edge that goes from the first vertex to the second.</div>
 </dd>
@@ -332,7 +332,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/simplegraph/impl/WeightedSparseGraph.html#existsEdge(V,V)" class="member-name-link">existsEdge(V, V)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedSparseGraph.html" title="class in org.simplegraph.impl">WeightedSparseGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/WeightedGraph.html#existsPath(V,V)" class="member-name-link">existsPath(V, V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/WeightedGraph.html" title="interface in org.simplegraph">WeightedGraph</a></dt>
+<dt><a href="org/simplegraph/DirectedWeightedGraph.html#existsPath(V,V)" class="member-name-link">existsPath(V, V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/DirectedWeightedGraph.html" title="interface in org.simplegraph">DirectedWeightedGraph</a></dt>
 <dd>
 <div class="block">Does a path exists between source and destination.</div>
 </dd>
@@ -366,11 +366,11 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:G">G</h2>
 <dl class="index">
-<dt><a href="org/simplegraph/impl/WeightedDenseGraph.html#getEdgeIndex(V,V)" class="member-name-link">getEdgeIndex(V, V)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedDenseGraph.html" title="class in org.simplegraph.impl">WeightedDenseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/DenseGraph.html#getEdgeIndex(V,V)" class="member-name-link">getEdgeIndex(V, V)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DenseGraph.html" title="class in org.simplegraph.impl">DenseGraph</a></dt>
 <dd>
 <div class="block">Get index of the edge between v1 and v2.</div>
 </dd>
-<dt><a href="org/simplegraph/impl/WeightedDenseGraph.html#getEdgesSize(int)" class="member-name-link">getEdgesSize(int)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedDenseGraph.html" title="class in org.simplegraph.impl">WeightedDenseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/DenseGraph.html#getEdgesSize(int)" class="member-name-link">getEdgesSize(int)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DenseGraph.html" title="class in org.simplegraph.impl">DenseGraph</a></dt>
 <dd>
 <div class="block">Get how much edges there are for the size passed.</div>
 </dd>
@@ -436,7 +436,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/simplegraph/util/Algorithms.html#getMinimumSpanningTree(org.simplegraph.WeightedGraph)" class="member-name-link">getMinimumSpanningTree(WeightedGraph&lt;V&gt;)</a> - Static method in class org.simplegraph.util.<a href="org/simplegraph/util/Algorithms.html" title="class in org.simplegraph.util">Algorithms</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/WeightedGraph.html#getNeighbors(V)" class="member-name-link">getNeighbors(V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/WeightedGraph.html" title="interface in org.simplegraph">WeightedGraph</a></dt>
+<dt><a href="org/simplegraph/DirectedWeightedGraph.html#getNeighbors(V)" class="member-name-link">getNeighbors(V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/DirectedWeightedGraph.html" title="interface in org.simplegraph">DirectedWeightedGraph</a></dt>
 <dd>
 <div class="block">Get the neighbors of a vertex</div>
 </dd>
@@ -492,7 +492,7 @@ loadScripts(document, 'script');</script>
 </dd>
 <dt><a href="org/simplegraph/impl/DirectedSparseGraph.html#getOutVertices(V)" class="member-name-link">getOutVertices(V)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedSparseGraph.html" title="class in org.simplegraph.impl">DirectedSparseGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/WeightedGraph.html#getPath(V,V)" class="member-name-link">getPath(V, V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/WeightedGraph.html" title="interface in org.simplegraph">WeightedGraph</a></dt>
+<dt><a href="org/simplegraph/DirectedWeightedGraph.html#getPath(V,V)" class="member-name-link">getPath(V, V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/DirectedWeightedGraph.html" title="interface in org.simplegraph">DirectedWeightedGraph</a></dt>
 <dd>
 <div class="block">Get a path between a source and a destination</div>
 </dd>
@@ -516,7 +516,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Returns the priority of this element.</div>
 </dd>
-<dt><a href="org/simplegraph/impl/WeightedDenseGraph.html#getShortestPath()" class="member-name-link">getShortestPath()</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedDenseGraph.html" title="class in org.simplegraph.impl">WeightedDenseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/DenseGraph.html#getShortestPath()" class="member-name-link">getShortestPath()</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DenseGraph.html" title="class in org.simplegraph.impl">DenseGraph</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/simplegraph/util/Algorithms.html#getShortestPath(org.simplegraph.WeightedGraph,V,V)" class="member-name-link">getShortestPath(WeightedGraph, V, V)</a> - Static method in class org.simplegraph.util.<a href="org/simplegraph/util/Algorithms.html" title="class in org.simplegraph.util">Algorithms</a></dt>
 <dd>&nbsp;</dd>
@@ -532,9 +532,9 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/simplegraph/impl/DirectedWeightedDenseGraph.html#getSingleEdge(V,V)" class="member-name-link">getSingleEdge(V, V)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedWeightedDenseGraph.html" title="class in org.simplegraph.impl">DirectedWeightedDenseGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/impl/DirectedSparseGraph.html#getSingleEdge(V,V)" class="member-name-link">getSingleEdge(V, V)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedSparseGraph.html" title="class in org.simplegraph.impl">DirectedSparseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/WeightedSparseGraph.html#getSingleEdge(V,V)" class="member-name-link">getSingleEdge(V, V)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedSparseGraph.html" title="class in org.simplegraph.impl">WeightedSparseGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/impl/WeightedDenseGraph.html#getSingleEdge(V,V)" class="member-name-link">getSingleEdge(V, V)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedDenseGraph.html" title="class in org.simplegraph.impl">WeightedDenseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/DenseGraph.html#getSingleEdge(V,V)" class="member-name-link">getSingleEdge(V, V)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DenseGraph.html" title="class in org.simplegraph.impl">DenseGraph</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/simplegraph/Graph.html#getSpanningTree()" class="member-name-link">getSpanningTree()</a> - Method in interface org.simplegraph.<a href="org/simplegraph/Graph.html" title="interface in org.simplegraph">Graph</a></dt>
 <dd>&nbsp;</dd>
@@ -564,7 +564,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Get index of the vertex.</div>
 </dd>
-<dt><a href="org/simplegraph/WeightedGraph.html#getVertices()" class="member-name-link">getVertices()</a> - Method in interface org.simplegraph.<a href="org/simplegraph/WeightedGraph.html" title="interface in org.simplegraph">WeightedGraph</a></dt>
+<dt><a href="org/simplegraph/DirectedWeightedGraph.html#getVertices()" class="member-name-link">getVertices()</a> - Method in interface org.simplegraph.<a href="org/simplegraph/DirectedWeightedGraph.html" title="interface in org.simplegraph">DirectedWeightedGraph</a></dt>
 <dd>
 <div class="block">Get all the vertices in the graph</div>
 </dd>
@@ -604,7 +604,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Grow the graph size to the specified size</div>
 </dd>
-<dt><a href="org/simplegraph/impl/WeightedDenseGraph.html#grow(int)" class="member-name-link">grow(int)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedDenseGraph.html" title="class in org.simplegraph.impl">WeightedDenseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/DenseGraph.html#grow(int)" class="member-name-link">grow(int)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DenseGraph.html" title="class in org.simplegraph.impl">DenseGraph</a></dt>
 <dd>
 <div class="block">Grow the graph size to the specified size</div>
 </dd>
@@ -615,7 +615,7 @@ loadScripts(document, 'script');</script>
 <dd>
 <div class="block">Initialize all attributes for storing graph data.</div>
 </dd>
-<dt><a href="org/simplegraph/impl/WeightedDenseGraph.html#initialize(int)" class="member-name-link">initialize(int)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedDenseGraph.html" title="class in org.simplegraph.impl">WeightedDenseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/DenseGraph.html#initialize(int)" class="member-name-link">initialize(int)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DenseGraph.html" title="class in org.simplegraph.impl">DenseGraph</a></dt>
 <dd>
 <div class="block">Initialize all attributes for storing graph data.</div>
 </dd>
@@ -649,7 +649,7 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:R">R</h2>
 <dl class="index">
-<dt><a href="org/simplegraph/WeightedGraph.html#removeEdge(V,V)" class="member-name-link">removeEdge(V, V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/WeightedGraph.html" title="interface in org.simplegraph">WeightedGraph</a></dt>
+<dt><a href="org/simplegraph/DirectedWeightedGraph.html#removeEdge(V,V)" class="member-name-link">removeEdge(V, V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/DirectedWeightedGraph.html" title="interface in org.simplegraph">DirectedWeightedGraph</a></dt>
 <dd>
 <div class="block">Remove an edge that goes from the first vertex to the second.</div>
 </dd>
@@ -669,7 +669,7 @@ loadScripts(document, 'script');</script>
 <dd>&nbsp;</dd>
 <dt><a href="org/simplegraph/impl/WeightedSparseGraph.html#removeEdge(V,V)" class="member-name-link">removeEdge(V, V)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedSparseGraph.html" title="class in org.simplegraph.impl">WeightedSparseGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/WeightedGraph.html#removeVertex(V)" class="member-name-link">removeVertex(V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/WeightedGraph.html" title="interface in org.simplegraph">WeightedGraph</a></dt>
+<dt><a href="org/simplegraph/DirectedWeightedGraph.html#removeVertex(V)" class="member-name-link">removeVertex(V)</a> - Method in interface org.simplegraph.<a href="org/simplegraph/DirectedWeightedGraph.html" title="interface in org.simplegraph">DirectedWeightedGraph</a></dt>
 <dd>
 <div class="block">Remove a vertex from the graph</div>
 </dd>
@@ -759,15 +759,15 @@ loadScripts(document, 'script');</script>
 </dl>
 <h2 class="title" id="I:_">_</h2>
 <dl class="index">
-<dt><a href="org/simplegraph/impl/DirectedSparseGraph.html#_countEdges()" class="member-name-link">_countEdges()</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedSparseGraph.html" title="class in org.simplegraph.impl">DirectedSparseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/WeightedSparseGraph.html#_countEdges()" class="member-name-link">_countEdges()</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedSparseGraph.html" title="class in org.simplegraph.impl">WeightedSparseGraph</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="org/simplegraph/impl/DirectedWeightedDenseGraph.html#_getSpanningTree()" class="member-name-link">_getSpanningTree()</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedWeightedDenseGraph.html" title="class in org.simplegraph.impl">DirectedWeightedDenseGraph</a></dt>
 <dd>
 <div class="block">Get a spanning tree if it exists.</div>
 </dd>
-<dt><a href="org/simplegraph/impl/WeightedDenseGraph.html#_getSpanningTree()" class="member-name-link">_getSpanningTree()</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedDenseGraph.html" title="class in org.simplegraph.impl">WeightedDenseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/DenseGraph.html#_getSpanningTree()" class="member-name-link">_getSpanningTree()</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DenseGraph.html" title="class in org.simplegraph.impl">DenseGraph</a></dt>
 <dd>&nbsp;</dd>
-<dt><a href="org/simplegraph/impl/DirectedSparseGraph.html#_removeEdge(V,V)" class="member-name-link">_removeEdge(V, V)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/DirectedSparseGraph.html" title="class in org.simplegraph.impl">DirectedSparseGraph</a></dt>
+<dt><a href="org/simplegraph/impl/WeightedSparseGraph.html#_removeEdge(V,V)" class="member-name-link">_removeEdge(V, V)</a> - Method in class org.simplegraph.impl.<a href="org/simplegraph/impl/WeightedSparseGraph.html" title="class in org.simplegraph.impl">WeightedSparseGraph</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a href="#I:A">A</a>&nbsp;<a href="#I:C">C</a>&nbsp;<a href="#I:D">D</a>&nbsp;<a href="#I:E">E</a>&nbsp;<a href="#I:F">F</a>&nbsp;<a href="#I:G">G</a>&nbsp;<a href="#I:I">I</a>&nbsp;<a href="#I:M">M</a>&nbsp;<a href="#I:O">O</a>&nbsp;<a href="#I:R">R</a>&nbsp;<a href="#I:S">S</a>&nbsp;<a href="#I:V">V</a>&nbsp;<a href="#I:W">W</a>&nbsp;<a href="#I:_">_</a>&nbsp;<br><a href="allclasses-index.html">All&nbsp;Classes&nbsp;and&nbsp;Interfaces</a><span class="vertical-separator">|</span><a href="allpackages-index.html">All&nbsp;Packages</a><span class="vertical-separator">|</span><a href="constant-values.html">Constant&nbsp;Field&nbsp;Values</a></main>
