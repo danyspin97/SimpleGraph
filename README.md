@@ -2,7 +2,7 @@
 
 [![Java CI with Gradle](https://github.com/danyspin97/SimpleGraph/actions/workflows/gradle.yml/badge.svg)](https://github.com/danyspin97/SimpleGraph/actions/workflows/gradle.yml)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/fe4bb3c9df4c4e80a737606dd7eac509)](https://app.codacy.com/gh/DanySpin97/SimpleGraph/dashboard)
-[![Coverage Status](https://coveralls.io/repos/github/danyspin97/SimpleGraph/badge.svg?branch=master)](https://coveralls.io/github/danyspin97/SimpleGraph?branch=master)
+[![Coverage Status](https://codecov.io/gh/danyspin97/SimpleGraph/graph/badge.svg?token=IcZFSrU9li)](https://codecov.io/gh/danyspin97/SimpleGraph)
 
 Basic graph interfaces and implementations in Java.
 

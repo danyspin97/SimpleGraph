@@ -6,7 +6,6 @@ plugins {
     `java-library`
     `maven-publish`
     jacoco
-    id("com.github.kt3k.coveralls") version "2.12.2"
 }
 
 repositories {
